@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { translations, type Language } from '../i18n/translations';
+import { useBusinessConfig } from '../../hooks/useBusinessConfig';
 
 type I18nContextType = {
   language: Language;
@@ -45,7 +46,7 @@ export function I18nProvider({ children }: I18nProviderProps) {
     [language]
   );
 
-  return <I18nContext.Provider value={ value }> { children } </I18nContext.Provider>;
+  return <I18nContext.Provider value={value}> {children} </I18nContext.Provider>;
 }
 
 export function useI18n() {
@@ -57,3 +58,6 @@ export function useI18n() {
 
   return context;
 }
+export const useBusinessConfig = () => {
+  // ...
+};
