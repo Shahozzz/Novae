@@ -9,6 +9,7 @@ import { Mail, Phone, MapPin, Send, MessageSquare, Briefcase } from 'lucide-reac
 import { useBusinessConfig } from '../../hooks/useBusinessConfig';
 
 export function Contact() {
+
   const { t } = useI18n();
   const { config, isLoading } = useBusinessConfig();
   const [isSubmitting, setIsSubmitting] = useState(false);
