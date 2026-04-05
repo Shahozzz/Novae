@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react"
 import path from "path"
 
 export default defineConfig({
-
   plugins: [react()],
 
   resolve: {
@@ -11,5 +10,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src")
     }
   }
-
 })
