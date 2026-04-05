@@ -32,7 +32,6 @@
     "noImplicitOverride": false,
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
-    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": [
