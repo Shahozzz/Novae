@@ -1,30 +1,33 @@
 import { useMemo, useState } from 'react';
 
-type AuthUser = {
+export interface AuthUser {
   id: string;
-  displayName: string;
-  email?: string;
-};
+  email: string;
+  displayName?: string;
+  role?: 'admin' | 'user';
+}
 
-type UseAuthResult = {
+export interface UseAuthResult {
   user: AuthUser | null;
   isAuthenticated: boolean;
-  login: () => void;
-  logout: () => void;
-};
+  isLoading: boolean;
+  login: () => Promise<void>;
+  logout: () => Promise<void>;
+}
 
 export function useAuth(): UseAuthResult {
   const [user, setUser] = useState<AuthUser | null>(null);
 
-  const login = () => {
+  const login = async () => {
     setUser({
       id: 'demo-user',
-      displayName: 'Admin User',
-      email: 'admin@example.com'
+      email: 'admin@novae-systems.com',
+      displayName: 'Admin',
+      role: 'admin',
     });
   };
 
-  const logout = () => {
+  const logout = async () => {
     setUser(null);
   };
 
@@ -32,8 +35,9 @@ export function useAuth(): UseAuthResult {
     () => ({
       user,
       isAuthenticated: !!user,
+      isLoading: false,
       login,
-      logout
+      logout,
     }),
     [user]
   );

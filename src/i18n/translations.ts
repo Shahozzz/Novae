@@ -11,13 +11,24 @@ export const translations = {
       subtitle: 'We help companies in Belgium with managed IT, cloud, and cybersecurity.'
     },
     services: {
-      title: 'Services',
-      items: {
-        support: 'IT Support',
-        managed: 'Managed IT',
-        cloud: 'Cloud Services',
-        security: 'Cybersecurity'
+
+      title: "Services",
+
+      itSupport: {
+        title: "IT Support",
+        description: "PC, Mac and network support"
+      },
+
+      business: {
+        title: "Managed IT",
+        description: "IT solutions for companies"
+      },
+
+      webDev: {
+        title: "Web Development",
+        description: "Modern websites and apps"
       }
+
     },
     contact: {
       title: 'Stay in touch',
@@ -43,13 +54,24 @@ export const translations = {
       subtitle: 'Nous aidons les entreprises en Belgique avec l’IT géré, le cloud et la cybersécurité.'
     },
     services: {
-      title: 'Services',
-      items: {
-        support: 'Support informatique',
-        managed: 'IT géré',
-        cloud: 'Services cloud',
-        security: 'Cybersécurité'
+
+      title: "Services",
+
+      itSupport: {
+        title: "IT Support",
+        description: "PC, Mac and network support"
+      },
+
+      business: {
+        title: "Managed IT",
+        description: "IT solutions for companies"
+      },
+
+      webDev: {
+        title: "Web Development",
+        description: "Modern websites and apps"
       }
+
     },
     contact: {
       title: 'Restons en contact',
@@ -75,13 +97,24 @@ export const translations = {
       subtitle: 'Wij helpen bedrijven in België met managed IT, cloud en cybersecurity.'
     },
     services: {
-      title: 'Diensten',
-      items: {
-        support: 'IT-support',
-        managed: 'Managed IT',
-        cloud: 'Cloudservices',
-        security: 'Cybersecurity'
+
+      title: "Diensten",
+
+      itSupport: {
+        title: "IT Support",
+        description: "PC en netwerk ondersteuning"
+      },
+
+      business: {
+        title: "Bedrijfs IT",
+        description: "IT oplossingen voor bedrijven"
+      },
+
+      webDev: {
+        title: "Web development",
+        description: "Moderne websites"
       }
+
     },
     contact: {
       title: 'Blijf in contact',
@@ -95,7 +128,7 @@ export const translations = {
       emailPlaceholder: 'Uw e-mailadres'
     }
   }
-} as const;
+} as any;
 
 export type Language = keyof typeof translations;
 export type TranslationSchema = typeof translations.en;

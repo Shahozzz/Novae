@@ -8,7 +8,12 @@
     "strict": true,
     "noEmit": false,
     "declaration": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
     "outDir": "dist"
   },
-  "include": ["vite.config.ts", "scripts/**/*"]
+  "include": [
+    "vite.config.ts",
+    "scripts/**/*"
+  ]
 }

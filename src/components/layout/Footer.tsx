@@ -8,18 +8,25 @@ export function Footer() {
    const { t } = useI18n();
    const { config, isLoading } = useBusinessConfig();
 
-   const footerLinks = [
-      { title: 'Company', items: ['About Us', 'Our Process', 'Career', 'Blog'] },
-      { title: 'Services', items: ['IT Support', 'Business Managed IT', 'Cloud Services', 'Cybersecurity'] },
-      { title: 'Support', items: ['FAQ', 'Client Portal', 'Emergency Support', 'Documentation'] }
-   ];
+   if (isLoading) return null;
 
    const socialLinks = [
       { Icon: Twitter, url: config?.twitterUrl },
       { Icon: Linkedin, url: config?.linkedinUrl },
       { Icon: Facebook, url: config?.facebookUrl },
       { Icon: Instagram, url: config?.instagramUrl }
-   ].filter((item) => item.url);
+   ].filter(item => item.url);
+
+   const footerLinks = [
+      {
+         title: "Company",
+         items: ["About", "Services", "Contact"]
+      },
+      {
+         title: "Legal",
+         items: ["Privacy", "Terms"]
+      }
+   ];
 
    if (isLoading) return null;
 

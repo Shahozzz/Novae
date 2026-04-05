@@ -31,6 +31,9 @@ export function Navbar() {
   ];
 
   if (isAuthenticated) {
+    type NavLink = { label: string; href: string };
+    const navLinks: NavLink[] = [
+    ];
     navLinks.push({ label: 'Admin', href: '/admin' });
   }
 
@@ -102,7 +105,8 @@ export function Navbar() {
           <div className="flex items-center rounded-md border border-border p-1">
             {languages.map((lang) => (
               <button
-                key={lang.code}
+                key={String(lang.code)}
+
                 type="button"
                 onClick={() => toggleLanguage(lang.code)}
                 className={cn(
@@ -180,7 +184,7 @@ export function Navbar() {
               <div className="flex gap-2">
                 {languages.map((lang) => (
                   <button
-                    key={lang.code}
+                    key={String(lang.code)}
                     type="button"
                     onClick={() => toggleLanguage(lang.code)}
                     className={cn(

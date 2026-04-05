@@ -32,7 +32,7 @@ export function I18nProvider({ children }: I18nProviderProps) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, String(language));
     }
   }, [language]);
 

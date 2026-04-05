@@ -1,63 +1,42 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { translations, type Language } from '../i18n/translations';
-import { useBusinessConfig } from '../../hooks/useBusinessConfig';
+import { useQuery } from '@tanstack/react-query';
 
-type I18nContextType = {
-  language: Language;
-  setLanguage: (language: Language) => void;
-  t: (typeof translations)[Language];
+export type BusinessConfigData = {
+  businessName?: string;
+  email?: string;
+  phone?: string;
+  address?: string;
+  twitterUrl?: string;
+  linkedinUrl?: string;
+  facebookUrl?: string;
+  instagramUrl?: string;
 };
 
-const I18nContext = createContext<I18nContextType | undefined>(undefined);
+export function useBusinessConfig() {
 
-type I18nProviderProps = {
-  children: ReactNode;
-};
+  const query = useQuery<BusinessConfigData>({
+    queryKey: ['businessConfig'],
 
-const LANGUAGE_STORAGE_KEY = 'language';
+    queryFn: async () => {
 
-export function I18nProvider({ children }: I18nProviderProps) {
-  const getInitialLanguage = (): Language => {
-    if (typeof window === 'undefined') return 'en';
+      return {
+        businessName: 'BE IT Solutions',
+        email: 'hello@beit.solutions',
+        phone: '+32 400 000 000',
+        address: 'Brussels, Belgium',
 
-    const savedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+        twitterUrl: '',
+        linkedinUrl: '',
+        facebookUrl: '',
+        instagramUrl: ''
+      };
 
-    if (savedLanguage === 'en' || savedLanguage === 'fr' || savedLanguage === 'nl') {
-      return savedLanguage;
     }
 
-    return 'en';
+  });
+
+  return {
+    config: query.data,
+    isLoading: query.isLoading
   };
 
-  const [language, setLanguage] = useState<Language>(getInitialLanguage);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
-    }
-  }, [language]);
-
-  const value = useMemo<I18nContextType>(
-    () => ({
-      language,
-      setLanguage,
-      t: translations[language]
-    }),
-    [language]
-  );
-
-  return <I18nContext.Provider value={value}> {children} </I18nContext.Provider>;
 }
-
-export function useI18n() {
-  const context = useContext(I18nContext);
-
-  if (!context) {
-    throw new Error('useI18n must be used within an I18nProvider');
-  }
-
-  return context;
-}
-export const useBusinessConfig = () => {
-  // ...
-};

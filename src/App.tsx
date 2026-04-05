@@ -25,9 +25,9 @@ const adminRoute = createRoute({
 });
 
 const routeTree = rootRoute.addChildren([indexRoute, adminRoute]);
-const router = createRouter({ routeTree });
-
-// Register for type-safe hooks
+const router = createRouter({
+  routeTree
+} as any);
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router;
