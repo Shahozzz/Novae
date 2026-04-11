@@ -4,7 +4,6 @@ import type { Language } from '../../i18n/translations';
 import { Button } from '../ui/button';
 import { useAuth } from '../../hooks/useAuth';
 import { Menu, X } from 'lucide-react';
-import { cn } from '../../lib/utils';
 import { Link } from '@tanstack/react-router';
 
 export function Navbar() {
@@ -53,6 +52,10 @@ export function Navbar() {
       }
     }
   };
+
+  function cn(arg0: string, arg1: string): string | undefined {
+    throw new Error('Function not implemented.');
+  }
 
   return (
     <header

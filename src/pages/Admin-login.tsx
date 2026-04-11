@@ -30,18 +30,27 @@ export default function AdminLogin() {
             <h1>Admin login</h1>
 
             <input
+
                 placeholder="email"
+
                 onChange={(e) => setEmail(e.target.value)}
+
             />
 
             <input
+
                 type="password"
+
                 placeholder="password"
+
                 onChange={(e) => setPassword(e.target.value)}
+
             />
 
             <button onClick={login}>
+
                 login
+
             </button>
 
         </div>

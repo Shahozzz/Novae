@@ -1,8 +1,12 @@
-import * as React from "react"
+import React from "react"
 
-import { cn } from "@/lib/utils"
+interface TextareaProps extends React.ComponentProps<"textarea"> { }
 
-function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
+function Textarea({ className, ...props }: TextareaProps) {
+  function cn(arg0: string, className: string | undefined): string | undefined {
+    throw new Error("Function not implemented.")
+  }
+
   return (
     <textarea
       data-slot="textarea"

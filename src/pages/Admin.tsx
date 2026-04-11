@@ -3,7 +3,6 @@ import { supabase } from "../lib/supabase"
 
 export default function Admin() {
 
-  const [loading, setLoading] = useState(true)
   const [content, setContent] = useState<any[]>([])
 
   useEffect(() => {
@@ -19,6 +18,7 @@ export default function Admin() {
     if (!data.session) {
 
       window.location.href = "/admin-login"
+
       return
 
     }
@@ -30,24 +30,26 @@ export default function Admin() {
   const loadContent = async () => {
 
     const { data } = await supabase
+
       .from("content")
+
       .select("*")
 
     setContent(data || [])
-    setLoading(false)
 
   }
 
   const save = async (id: string, body: string) => {
 
     await supabase
+
       .from("content")
+
       .update({ body })
+
       .eq("id", id)
 
   }
-
-  if (loading) return <p>loading...</p>
 
   return (
 
@@ -62,8 +64,15 @@ export default function Admin() {
           <h3>{item.title}</h3>
 
           <textarea
+
             defaultValue={item.body}
-            onBlur={(e) => save(item.id, e.target.value)}
+
+            onBlur={(e) =>
+
+              save(item.id, e.target.value)
+
+            }
+
           />
 
         </div>
