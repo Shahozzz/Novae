@@ -19,10 +19,10 @@ export function useBusinessConfig() {
     queryFn: async () => {
 
       return {
-        businessName: 'BE IT Solutions',
-        email: 'hello@beit.solutions',
-        phone: '+32 400 000 000',
-        address: 'Brussels, Belgium',
+        businessName: 'Novae Systems',
+        email: 'novae.systems@icloud.com',
+        phone: '+32 455 10 95 55',
+        address: 'Chaumont-Gistoux, Belgium',
 
         twitterUrl: '',
         linkedinUrl: '',
