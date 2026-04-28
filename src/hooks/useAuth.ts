@@ -28,6 +28,7 @@ export function useAuth(): UseAuthResult {
       return;
     }
 
+    const client = supabase;
     let mounted = true;
 
     const mapUser = (sessionUser: { id: string; email?: string | null; user_metadata?: Record<string, unknown> } | null) =>
@@ -45,7 +46,7 @@ export function useAuth(): UseAuthResult {
         : null;
 
     const syncUser = async () => {
-      const { data } = await supabase.auth.getSession();
+      const { data } = await client.auth.getSession();
 
       if (!mounted) return;
 
@@ -57,7 +58,7 @@ export function useAuth(): UseAuthResult {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = client.auth.onAuthStateChange((_event, session) => {
       setUser(mapUser(session?.user ?? null));
       setIsLoading(false);
     });
