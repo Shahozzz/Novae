@@ -1,9 +1,7 @@
 import { FormEvent, useState } from "react"
-import { useNavigate } from "@tanstack/react-router"
 import { supabase } from "../lib/supabase"
 
 export default function AdminLogin() {
-  const navigate = useNavigate()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
@@ -31,7 +29,7 @@ export default function AdminLogin() {
       return
     }
 
-    await navigate({ to: "/admin" })
+    window.location.assign("/admin")
   }
 
   return (

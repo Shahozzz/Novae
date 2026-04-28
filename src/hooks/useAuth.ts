@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from '@tanstack/react-router';
 import { supabase } from '../lib/supabase';
 
 export interface AuthUser {
@@ -18,7 +17,6 @@ export interface UseAuthResult {
 }
 
 export function useAuth(): UseAuthResult {
-  const navigate = useNavigate();
   const [user, setUser] = useState<AuthUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -70,7 +68,7 @@ export function useAuth(): UseAuthResult {
   }, []);
 
   const login = async () => {
-    await navigate({ to: '/admin-login' });
+    window.location.assign('/admin-login');
   };
 
   const logout = async () => {
@@ -88,6 +86,6 @@ export function useAuth(): UseAuthResult {
       login,
       logout,
     }),
-    [isLoading, user, navigate]
+    [isLoading, user]
   );
 }

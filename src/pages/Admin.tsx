@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "@tanstack/react-router"
 import { isSupabaseConfigured, supabase } from "../lib/supabase"
 
 type ContentItem = {
@@ -9,13 +8,12 @@ type ContentItem = {
 }
 
 export function AdminPage() {
-  const navigate = useNavigate()
   const [content, setContent] = useState<ContentItem[]>([])
   const [errorMessage, setErrorMessage] = useState("")
 
   useEffect(() => {
     checkUser()
-  }, [navigate])
+  }, [])
 
   const checkUser = async () => {
     if (!supabase) {
@@ -26,7 +24,7 @@ export function AdminPage() {
     const { data } = await supabase.auth.getSession()
 
     if (!data.session) {
-      navigate({ to: "/admin-login" })
+      window.location.replace("/admin-login")
       return
     }
 
