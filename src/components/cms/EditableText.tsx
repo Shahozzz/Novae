@@ -1,89 +1,95 @@
-import { useState, useEffect } from "react";
-const supabase = null as any
+import { ReactNode, useEffect, useState } from "react"
+import { useAuth } from "../../hooks/useAuth"
+import { isSupabaseConfigured, supabase } from "../../lib/supabase"
 
 type Props = {
-    id: string
-    children: string
+  id: string
+  children: ReactNode
 }
 
 export function EditableText({ id, children }: Props) {
+  const fallbackValue =
+    typeof children === "string" || typeof children === "number"
+      ? String(children)
+      : ""
 
-    const [value, setValue] = useState(children)
-    const [editing, setEditing] = useState(false)
+  const [value, setValue] = useState(fallbackValue)
+  const [editing, setEditing] = useState(false)
+  const { isAuthenticated } = useAuth()
 
-    useEffect(() => {
+  useEffect(() => {
+    setValue(fallbackValue)
+  }, [fallbackValue])
 
-        async function load() {
+  useEffect(() => {
+    if (!supabase) return
 
-            const { data } = await supabase
-                .from("content")
-                .select("value")
-                .eq("id", id)
-                .single()
+    const client = supabase
 
-            if (data?.value) setValue(data.value)
+    async function load() {
+      const { data } = await client
+        .from("content")
+        .select("body")
+        .eq("id", id)
+        .single()
 
-        }
-
-        load()
-
-    }, [id])
-
-    async function save() {
-
-        await supabase
-            .from("content")
-            .upsert({
-                id,
-                value
-            })
-
-        setEditing(false)
-
+      if (data?.body) {
+        setValue(data.body)
+      }
     }
 
-    // TEMPORAIRE
-    const isAdmin = true
-    if (!isAdmin) return <>{value}</>
+    load()
+  }, [id])
 
-    if (editing) {
-
-        return (
-
-            <span>
-
-                <textarea
-                    value={value}
-                    onChange={e => setValue(e.target.value)}
-                    className="border p-2"
-                />
-
-                <button
-                    onClick={save}
-                    className="ml-2 px-2 py-1 bg-black text-white"
-                >
-                    save
-                </button>
-
-            </span>
-
-        )
-
+  async function save() {
+    if (!supabase) {
+      setEditing(false)
+      return
     }
 
+    await supabase
+      .from("content")
+      .upsert({
+        id,
+        body: value
+      })
+
+    setEditing(false)
+  }
+
+  const isAdmin = isSupabaseConfigured && isAuthenticated
+
+  if (!isAdmin) return <>{value}</>
+
+  if (editing) {
     return (
+      <span>
+        <textarea
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          className="border p-2"
+        />
 
-        <span
-            onClick={() => setEditing(true)}
-            style={{
-                cursor: "pointer",
-                outline: "1px dashed orange",
-                padding: "2px"
-            }}
+        <button
+          onClick={save}
+          className="ml-2 px-2 py-1 bg-black text-white"
         >
-            {value} ✏️
-        </span>
-
+          save
+        </button>
+      </span>
     )
+  }
 
+  return (
+    <span
+      onClick={() => setEditing(true)}
+      style={{
+        cursor: "pointer",
+        outline: "1px dashed orange",
+        padding: "2px"
+      }}
+    >
+      {value} ✏️
+    </span>
+  )
 }

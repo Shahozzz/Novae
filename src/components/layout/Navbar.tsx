@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useI18n } from '../../hooks/useI18n';
 import type { Language } from '../../i18n/translations';
-import { Button } from '../ui/button';
 import { useAuth } from '../../hooks/useAuth';
 import { Menu, X } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
-
+import { cn } from '../../lib/utils';
 export function Navbar() {
   const { language, setLanguage, t } = useI18n();
   const { isAuthenticated, login, logout, user } = useAuth();
@@ -23,17 +22,16 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
-  const navLinks = [
+  let navLinks = [
     { label: t.nav.services, href: '#services' },
-    { label: t.nav.about, href: '#about' },
     { label: t.nav.contact, href: '#contact' }
   ];
 
   if (isAuthenticated) {
-    type NavLink = { label: string; href: string };
-    const navLinks: NavLink[] = [
+    navLinks = [
+      ...navLinks,
+      { label: 'Admin', href: '/admin' }
     ];
-    navLinks.push({ label: 'Admin', href: '/admin' });
   }
 
   const languages: { code: Language; label: string }[] = [
@@ -52,10 +50,6 @@ export function Navbar() {
       }
     }
   };
-
-  function cn(arg0: string, arg1: string): string | undefined {
-    throw new Error('Function not implemented.');
-  }
 
   return (
     <header
@@ -129,14 +123,14 @@ export function Navbar() {
               <span className="text-sm text-muted-foreground">
                 Hi, {user?.displayName || 'User'}
               </span>
-              <Button type="button" variant="outline" onClick={() => logout()}>
+              <button type="button" className="inline-flex items-center justify-center rounded-md border border-border bg-background px-3 py-2 text-sm font-medium text-foreground transition hover:bg-muted" onClick={() => logout()}>
                 Log out
-              </Button>
+              </button>
             </div>
           ) : (
-            <Button type="button" onClick={() => login()}>
+            <button type="button" className="inline-flex items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90" onClick={() => login()}>
               {t.nav.login}
-            </Button>
+            </button>
           )}
         </div>
 
@@ -205,13 +199,13 @@ export function Navbar() {
 
             <div>
               {isAuthenticated ? (
-                <Button type="button" variant="outline" onClick={() => logout()} className="w-full">
+                <button type="button" onClick={() => logout()} className="w-full inline-flex items-center justify-center rounded-md border border-border bg-background px-3 py-2 text-sm font-medium text-foreground transition hover:bg-muted">
                   Log out
-                </Button>
+                </button>
               ) : (
-                <Button type="button" onClick={() => login()} className="w-full">
+                <button type="button" onClick={() => login()} className="w-full inline-flex items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90">
                   {t.nav.login}
-                </Button>
+                </button>
               )}
             </div>
           </div>
