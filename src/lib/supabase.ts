@@ -1,9 +1,10 @@
 import { createClient } from "@supabase/supabase-js"
 
-export const supabase = createClient(
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-    import.meta.env.VITE_SUPABASE_URL,
+export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseAnonKey)
 
-    import.meta.env.VITE_SUPABASE_ANON_KEY
-
-)
+export const supabase = isSupabaseConfigured
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : null
