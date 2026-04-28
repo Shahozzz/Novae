@@ -1,59 +1,76 @@
-import { useState } from "react"
+import { FormEvent, useState } from "react"
+import { useNavigate } from "@tanstack/react-router"
 import { supabase } from "../lib/supabase"
 
 export default function AdminLogin() {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+  const login = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
 
-    const login = async () => {
-
-        const { error } = await supabase.auth.signInWithPassword({
-
-            email,
-            password
-
-        })
-
-        if (!error) {
-
-            window.location.href = "/admin"
-
-        }
-
+    if (!supabase) {
+      setErrorMessage("Supabase n'est pas configure.")
+      return
     }
 
-    return (
+    setIsSubmitting(true)
+    setErrorMessage("")
 
-        <div>
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    })
 
-            <h1>Admin login</h1>
+    if (error) {
+      setErrorMessage(error.message)
+      setIsSubmitting(false)
+      return
+    }
 
-            <input
+    await navigate({ to: "/admin" })
+  }
 
-                placeholder="email"
+  return (
+    <div className="mx-auto flex min-h-screen max-w-md items-center px-6">
+      <form className="w-full space-y-4 rounded-xl border p-6" onSubmit={login}>
+        <h1 className="text-2xl font-semibold">Admin login</h1>
 
-                onChange={(e) => setEmail(e.target.value)}
+        <input
+          type="email"
+          value={email}
+          placeholder="email"
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full rounded-md border px-3 py-2"
+          autoComplete="email"
+          required
+        />
 
-            />
+        <input
+          type="password"
+          value={password}
+          placeholder="password"
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full rounded-md border px-3 py-2"
+          autoComplete="current-password"
+          required
+        />
 
-            <input
+        {errorMessage ? (
+          <p className="text-sm text-red-600">{errorMessage}</p>
+        ) : null}
 
-                type="password"
-
-                placeholder="password"
-
-                onChange={(e) => setPassword(e.target.value)}
-
-            />
-
-            <button onClick={login}>
-
-                login
-
-            </button>
-
-        </div>
-
-    )
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full rounded-md bg-black px-4 py-2 text-white disabled:opacity-60"
+        >
+          {isSubmitting ? "Connexion..." : "login"}
+        </button>
+      </form>
+    </div>
+  )
 }

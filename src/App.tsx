@@ -1,6 +1,7 @@
 import { createRouter, createRoute, createRootRoute, RouterProvider, Outlet } from '@tanstack/react-router';
 import { HomePage } from './pages/Home';
 import { AdminPage } from './pages/Admin';
+import AdminLogin from './pages/Admin-login';
 import { I18nProvider } from './hooks/useI18n';
 
 // Setup TanStack Router
@@ -24,7 +25,13 @@ const adminRoute = createRoute({
   component: AdminPage
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, adminRoute]);
+const adminLoginRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/admin-login',
+  component: AdminLogin
+});
+
+const routeTree = rootRoute.addChildren([indexRoute, adminRoute, adminLoginRoute]);
 const router = createRouter({
   routeTree
 } as any);

@@ -1,4 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from '@tanstack/react-router';
+import { supabase } from '../lib/supabase';
 
 export interface AuthUser {
   id: string;
@@ -16,18 +18,64 @@ export interface UseAuthResult {
 }
 
 export function useAuth(): UseAuthResult {
+  const navigate = useNavigate();
   const [user, setUser] = useState<AuthUser | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (!supabase) {
+      setIsLoading(false);
+      return;
+    }
+
+    let mounted = true;
+
+    const mapUser = (sessionUser: { id: string; email?: string | null; user_metadata?: Record<string, unknown> } | null) =>
+      sessionUser
+        ? {
+            id: sessionUser.id,
+            email: sessionUser.email ?? '',
+            displayName:
+              (typeof sessionUser.user_metadata?.display_name === 'string' && sessionUser.user_metadata.display_name) ||
+              (typeof sessionUser.user_metadata?.name === 'string' && sessionUser.user_metadata.name) ||
+              sessionUser.email ||
+              'Admin',
+            role: 'admin' as const,
+          }
+        : null;
+
+    const syncUser = async () => {
+      const { data } = await supabase.auth.getSession();
+
+      if (!mounted) return;
+
+      setUser(mapUser(data.session?.user ?? null));
+      setIsLoading(false);
+    };
+
+    syncUser();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(mapUser(session?.user ?? null));
+      setIsLoading(false);
+    });
+
+    return () => {
+      mounted = false;
+      subscription.unsubscribe();
+    };
+  }, []);
 
   const login = async () => {
-    setUser({
-      id: 'demo-user',
-      email: 'admin@novae-systems.com',
-      displayName: 'Admin',
-      role: 'admin',
-    });
+    await navigate({ to: '/admin-login' });
   };
 
   const logout = async () => {
+    if (supabase) {
+      await supabase.auth.signOut();
+    }
     setUser(null);
   };
 
@@ -35,10 +83,10 @@ export function useAuth(): UseAuthResult {
     () => ({
       user,
       isAuthenticated: !!user,
-      isLoading: false,
+      isLoading,
       login,
       logout,
     }),
-    [user]
+    [isLoading, user, navigate]
   );
 }
