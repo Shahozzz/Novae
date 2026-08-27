@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr-BE">
-
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>
-    Novae Systems | Support informatique, Apple & solutions digitales
-  </title>
+  <title>Novae Systems | Support informatique, Apple & solutions digitales</title>
 
   <meta
     name="description"
     content="Novae Systems accompagne particuliers, indépendants et petites entreprises en Belgique : support informatique, Apple, Mac & Windows, récupération de données, sites web et solutions digitales."
   >
 
-  <meta
-    name="theme-color"
-    content="#080D0D"
-  >
+  <meta name="theme-color" content="#080D0D">
 
   <style>
-
-    /* =========================================================
-       NOVAE SYSTEMS
-       Identité sombre / grille / vert rétro-éclairé / or
-    ========================================================= */
-
     :root {
-
       --bg: #080D0D;
       --bg-soft: #0B1111;
       --bg-card: #0D1515;
-      --bg-card-hover: #101C1B;
 
       --grid: rgba(105, 190, 181, 0.055);
 
@@ -54,19 +37,8 @@
       --border: rgba(124, 196, 188, 0.18);
       --border-hover: rgba(57, 230, 207, 0.42);
 
-      --green-glow:
-        rgba(24, 199, 181, 0.16);
-
-      --gold-glow:
-        rgba(214, 173, 67, 0.13);
-
       --radius: 16px;
     }
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
       margin: 0;
@@ -80,7 +52,6 @@
     }
 
     body {
-
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -91,7 +62,6 @@
         sans-serif;
 
       color: var(--text);
-
       background-color: var(--bg);
 
       background-image:
@@ -122,7 +92,6 @@
         100% 100%;
 
       line-height: 1.6;
-
       min-height: 100vh;
     }
 
@@ -130,7 +99,6 @@
       content: "";
 
       position: fixed;
-
       inset: 0;
 
       pointer-events: none;
@@ -138,10 +106,10 @@
       background:
         linear-gradient(
           90deg,
-          rgba(0,0,0,0.12),
+          rgba(0, 0, 0, 0.12),
           transparent 25%,
           transparent 75%,
-          rgba(0,0,0,0.12)
+          rgba(0, 0, 0, 0.12)
         );
 
       z-index: -1;
@@ -151,132 +119,77 @@
       color: inherit;
     }
 
-    img {
-      max-width: 100%;
-    }
-
     .container {
-      width: min(
-        1120px,
-        calc(100% - 40px)
-      );
-
+      width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
-
 
     /* =========================================================
        HEADER
     ========================================================= */
 
     header {
-
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
 
-      background:
-        rgba(7, 12, 12, 0.90);
+      background: rgba(7, 12, 12, 0.90);
 
-      backdrop-filter:
-        blur(18px);
-
-      -webkit-backdrop-filter:
-        blur(18px);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
 
       border-bottom:
-        1px solid rgba(
-          124,
-          196,
-          188,
-          0.13
-        );
+        1px solid rgba(124, 196, 188, 0.13);
     }
 
     .header-content {
-
       min-height: 78px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
       gap: 25px;
-
       flex-wrap: wrap;
     }
 
-
-    /* LOGO */
-
     .logo {
-
       display: flex;
-
       align-items: center;
-
       gap: 10px;
 
       color: var(--text);
-
       text-decoration: none;
 
       font-size: 1.25rem;
-
       font-weight: 800;
 
       letter-spacing: -0.025em;
-
       white-space: nowrap;
     }
 
     .logo-mark {
-
       width: 38px;
-
       height: 38px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       border-radius: 10px;
 
       background:
-        rgba(
-          24,
-          199,
-          181,
-          0.12
-        );
+        rgba(24, 199, 181, 0.12);
 
       border:
-        1px solid
-        rgba(
-          24,
-          199,
-          181,
-          0.40
-        );
+        1px solid rgba(24, 199, 181, 0.40);
 
       color: var(--green-light);
 
       font-size: 0.9rem;
 
       box-shadow:
-        0 0 18px
-        rgba(
-          24,
-          199,
-          181,
-          0.10
-        );
+        0 0 18px rgba(24, 199, 181, 0.10);
     }
 
     .logo-name span {
@@ -284,7 +197,6 @@
     }
 
     .logo-subtitle {
-
       display: block;
 
       margin-top: -2px;
@@ -292,46 +204,34 @@
       color: var(--green);
 
       font-size: 0.58rem;
-
       font-weight: 700;
 
       letter-spacing: 0.10em;
-
       text-transform: uppercase;
     }
 
-
-    /* NAV */
-
     .nav-links {
-
       display: flex;
-
       align-items: center;
 
       gap: 22px;
-
       flex-wrap: wrap;
     }
 
     .nav-links a {
-
       color: var(--muted);
 
       text-decoration: none;
 
       font-size: 0.85rem;
-
       font-weight: 600;
 
-      transition:
-        color 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
       color: var(--green-light);
     }
-
 
     /* =========================================================
        BOUTONS
@@ -339,11 +239,9 @@
 
     .cta-button,
     .secondary-button {
-
       display: inline-flex;
 
       align-items: center;
-
       justify-content: center;
 
       min-height: 46px;
@@ -355,7 +253,6 @@
       text-decoration: none;
 
       font-size: 0.88rem;
-
       font-weight: 750;
 
       transition:
@@ -366,7 +263,6 @@
     }
 
     .cta-button {
-
       background:
         linear-gradient(
           135deg,
@@ -376,28 +272,15 @@
 
       color: #04100E;
 
-      border: 1px solid
-        rgba(
-          57,
-          230,
-          207,
-          0.25
-        );
+      border:
+        1px solid rgba(57, 230, 207, 0.25);
 
       box-shadow:
-        0 0 18px
-        rgba(
-          24,
-          199,
-          181,
-          0.12
-        );
+        0 0 18px rgba(24, 199, 181, 0.12);
     }
 
     .cta-button:hover {
-
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
 
       background:
         linear-gradient(
@@ -407,67 +290,37 @@
         );
 
       box-shadow:
-        0 0 20px
-        rgba(
-          57,
-          230,
-          207,
-          0.28
-        ),
-        0 0 45px
-        rgba(
-          24,
-          199,
-          181,
-          0.10
-        );
+        0 0 20px rgba(57, 230, 207, 0.28),
+        0 0 45px rgba(24, 199, 181, 0.10);
     }
 
     .secondary-button {
-
       color: var(--text);
 
       background:
-        rgba(
-          255,
-          255,
-          255,
-          0.025
-        );
+        rgba(255, 255, 255, 0.025);
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
     }
 
     .secondary-button:hover {
-
       color: var(--green-light);
 
-      border-color:
-        var(--border-hover);
+      border-color: var(--border-hover);
 
       background:
-        rgba(
-          24,
-          199,
-          181,
-          0.055
-        );
+        rgba(24, 199, 181, 0.055);
     }
-
 
     /* =========================================================
        HERO
     ========================================================= */
 
     .hero {
-
       position: relative;
 
-      padding:
-        110px 0
-        85px;
+      padding: 110px 0 85px;
 
       text-align: center;
 
@@ -475,31 +328,22 @@
     }
 
     .hero::before {
-
       content: "";
 
       position: absolute;
 
       width: 620px;
-
       height: 620px;
 
       top: -390px;
-
       left: 50%;
 
-      transform:
-        translateX(-50%);
+      transform: translateX(-50%);
 
       background:
         radial-gradient(
           circle,
-          rgba(
-            24,
-            199,
-            181,
-            0.12
-          ),
+          rgba(24, 199, 181, 0.12),
           transparent 67%
         );
 
@@ -507,28 +351,20 @@
     }
 
     .hero::after {
-
       content: "";
 
       position: absolute;
 
       width: 360px;
-
       height: 360px;
 
       right: -180px;
-
       bottom: -200px;
 
       background:
         radial-gradient(
           circle,
-          rgba(
-            214,
-            173,
-            67,
-            0.065
-          ),
+          rgba(214, 173, 67, 0.065),
           transparent 70%
         );
 
@@ -536,9 +372,7 @@
     }
 
     .hero-content {
-
       position: relative;
-
       z-index: 1;
 
       max-width: 920px;
@@ -546,86 +380,55 @@
       margin: 0 auto;
     }
 
-
-    /* BADGE */
-
     .hero-label {
-
       display: inline-flex;
 
       align-items: center;
-
       gap: 8px;
 
-      padding:
-        7px 14px;
+      padding: 7px 14px;
 
       margin-bottom: 28px;
 
       color: var(--green-light);
 
       background:
-        rgba(
-          24,
-          199,
-          181,
-          0.045
-        );
+        rgba(24, 199, 181, 0.045);
 
       border:
-        1px solid
-        rgba(
-          24,
-          199,
-          181,
-          0.25
-        );
+        1px solid rgba(24, 199, 181, 0.25);
 
       border-radius: 999px;
 
       font-size: 0.70rem;
-
       font-weight: 800;
 
       letter-spacing: 0.08em;
-
       text-transform: uppercase;
     }
 
     .hero-label::before {
-
       content: "";
 
       width: 7px;
-
       height: 7px;
 
       border-radius: 50%;
 
-      background:
-        var(--green);
+      background: var(--green);
 
       box-shadow:
-        0 0 9px
-        var(--green);
+        0 0 9px var(--green);
     }
 
-
-    /* ICONE HERO */
-
     .hero-symbol {
-
       width: 66px;
-
       height: 66px;
 
-      margin:
-        0 auto 30px;
+      margin: 0 auto 30px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       border-radius: 15px;
@@ -633,105 +436,56 @@
       background:
         linear-gradient(
           145deg,
-          rgba(
-            24,
-            199,
-            181,
-            0.10
-          ),
-          rgba(
-            214,
-            173,
-            67,
-            0.06
-          )
+          rgba(24, 199, 181, 0.10),
+          rgba(214, 173, 67, 0.06)
         );
 
       border:
-        1px solid
-        rgba(
-          24,
-          199,
-          181,
-          0.32
-        );
+        1px solid rgba(24, 199, 181, 0.32);
 
       color: var(--gold-light);
 
       font-size: 1.55rem;
 
       box-shadow:
-        0 0 20px
-        rgba(
-          24,
-          199,
-          181,
-          0.07
-        ),
-        0 0 35px
-        rgba(
-          214,
-          173,
-          67,
-          0.05
-        );
+        0 0 20px rgba(24, 199, 181, 0.07),
+        0 0 35px rgba(214, 173, 67, 0.05);
     }
 
     .hero h1 {
-
       max-width: 900px;
 
-      margin:
-        0 auto 23px;
+      margin: 0 auto 23px;
 
       color: var(--text);
 
       font-size:
-        clamp(
-          2.4rem,
-          6vw,
-          4.7rem
-        );
+        clamp(2.4rem, 6vw, 4.7rem);
 
       line-height: 1.04;
 
-      letter-spacing:
-        -0.055em;
+      letter-spacing: -0.055em;
     }
 
     .hero h1 .highlight {
-
       color: var(--green-light);
 
       text-shadow:
-        0 0 30px
-        rgba(
-          57,
-          230,
-          207,
-          0.15
-        );
+        0 0 30px rgba(57, 230, 207, 0.15);
     }
 
     .hero p {
-
       max-width: 760px;
 
-      margin:
-        0 auto 30px;
+      margin: 0 auto 30px;
 
       color: var(--muted);
 
       font-size:
-        clamp(
-          0.95rem,
-          2vw,
-          1.08rem
-        );
+        clamp(0.95rem, 2vw, 1.08rem);
     }
 
     .hero-buttons {
-
       display: flex;
 
       justify-content: center;
@@ -741,13 +495,7 @@
       flex-wrap: wrap;
     }
 
-
-    /* =========================================================
-       PETITES CARTES SOUS HERO
-    ========================================================= */
-
     .hero-features {
-
       display: grid;
 
       grid-template-columns:
@@ -761,26 +509,18 @@
     }
 
     .hero-feature {
-
       padding: 19px;
 
       background:
-        rgba(
-          10,
-          19,
-          18,
-          0.78
-        );
+        rgba(10, 19, 18, 0.78);
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       border-radius: 13px;
     }
 
     .hero-feature-icon {
-
       margin-bottom: 10px;
 
       color: var(--green);
@@ -789,7 +529,6 @@
     }
 
     .hero-feature strong {
-
       display: block;
 
       margin-bottom: 3px;
@@ -800,65 +539,41 @@
     }
 
     .hero-feature span {
-
       color: var(--muted);
 
       font-size: 0.76rem;
     }
-
 
     /* =========================================================
        SECTIONS
     ========================================================= */
 
     .section {
-
       position: relative;
 
       padding: 80px 0;
     }
 
     .section-alt {
-
       background:
-        rgba(
-          8,
-          16,
-          16,
-          0.76
-        );
+        rgba(8, 16, 16, 0.76);
 
       border-top:
-        1px solid
-        rgba(
-          124,
-          196,
-          188,
-          0.06
-        );
+        1px solid rgba(124, 196, 188, 0.06);
 
       border-bottom:
-        1px solid
-        rgba(
-          124,
-          196,
-          188,
-          0.06
-        );
+        1px solid rgba(124, 196, 188, 0.06);
     }
 
     .section-header {
-
       max-width: 760px;
 
-      margin:
-        0 auto 42px;
+      margin: 0 auto 42px;
 
       text-align: center;
     }
 
     .section-label {
-
       display: block;
 
       margin-bottom: 8px;
@@ -866,26 +581,19 @@
       color: var(--green);
 
       font-size: 0.70rem;
-
       font-weight: 800;
 
       letter-spacing: 0.12em;
-
       text-transform: uppercase;
     }
 
     .section-title {
-
       margin-bottom: 13px;
 
       color: var(--text);
 
       font-size:
-        clamp(
-          1.75rem,
-          4vw,
-          2.45rem
-        );
+        clamp(1.75rem, 4vw, 2.45rem);
 
       line-height: 1.15;
 
@@ -893,39 +601,132 @@
     }
 
     .section-subtitle {
-
       color: var(--muted);
 
       font-size: 0.94rem;
     }
 
+    /* =========================================================
+       PRESENTATION
+    ========================================================= */
+
+    .two-columns {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 55px;
+
+      align-items: center;
+    }
+
+    .two-columns h2 {
+      margin-bottom: 16px;
+
+      color: var(--text);
+
+      font-size:
+        clamp(1.8rem, 4vw, 2.5rem);
+
+      line-height: 1.15;
+
+      letter-spacing: -0.03em;
+    }
+
+    .two-columns p {
+      margin-bottom: 13px;
+
+      color: var(--muted);
+    }
+
+    .check-list {
+      list-style: none;
+
+      margin-top: 20px;
+    }
+
+    .check-list li {
+      position: relative;
+
+      padding:
+        7px 0 7px 27px;
+
+      color: var(--text-soft);
+
+      font-size: 0.88rem;
+    }
+
+    .check-list li::before {
+      content: "✓";
+
+      position: absolute;
+
+      left: 0;
+
+      color: var(--green);
+
+      font-weight: 900;
+
+      text-shadow:
+        0 0 10px rgba(24, 199, 181, 0.25);
+    }
+
+    .info-box {
+      position: relative;
+
+      padding: 31px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 30, 28, 0.92),
+          rgba(9, 19, 18, 0.92)
+        );
+
+      border:
+        1px solid rgba(24, 199, 181, 0.23);
+
+      border-radius: var(--radius);
+
+      box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.22),
+        0 0 35px rgba(24, 199, 181, 0.05);
+    }
+
+    .info-box h3 {
+      margin-bottom: 11px;
+
+      color: var(--text);
+
+      font-size: 1.3rem;
+    }
+
+    .info-box p {
+      margin-bottom: 21px;
+
+      color: var(--muted);
+    }
 
     /* =========================================================
-       CARTES SERVICES
+       CARTES
     ========================================================= */
 
     .services-grid {
-
       display: grid;
 
       grid-template-columns:
         repeat(
           auto-fit,
-          minmax(
-            285px,
-            1fr
-          )
+          minmax(285px, 1fr)
         );
 
       gap: 18px;
     }
 
     .service-card {
-
       position: relative;
 
       display: flex;
-
       flex-direction: column;
 
       padding: 25px;
@@ -933,26 +734,14 @@
       background:
         linear-gradient(
           145deg,
-          rgba(
-            14,
-            24,
-            23,
-            0.94
-          ),
-          rgba(
-            9,
-            17,
-            17,
-            0.96
-          )
+          rgba(14, 24, 23, 0.94),
+          rgba(9, 17, 17, 0.96)
         );
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
-      border-radius:
-        var(--radius);
+      border-radius: var(--radius);
 
       overflow: hidden;
 
@@ -963,28 +752,20 @@
     }
 
     .service-card::before {
-
       content: "";
 
       position: absolute;
 
       width: 170px;
-
       height: 170px;
 
       right: -100px;
-
       top: -100px;
 
       background:
         radial-gradient(
           circle,
-          rgba(
-            24,
-            199,
-            181,
-            0.075
-          ),
+          rgba(24, 199, 181, 0.075),
           transparent 70%
         );
 
@@ -992,43 +773,23 @@
     }
 
     .service-card:hover {
-
-      transform:
-        translateY(-4px);
+      transform: translateY(-4px);
 
       border-color:
         var(--border-hover);
 
       box-shadow:
-        0 16px 40px
-        rgba(
-          0,
-          0,
-          0,
-          0.28
-        ),
-        0 0 28px
-        rgba(
-          24,
-          199,
-          181,
-          0.055
-        );
+        0 16px 40px rgba(0, 0, 0, 0.28),
+        0 0 28px rgba(24, 199, 181, 0.055);
     }
 
-
-    /* ICONE SERVICE */
-
     .service-icon {
-
       width: 46px;
-
       height: 46px;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       margin-bottom: 18px;
@@ -1038,93 +799,31 @@
       color: var(--green-light);
 
       background:
-        rgba(
-          24,
-          199,
-          181,
-          0.08
-        );
+        rgba(24, 199, 181, 0.08);
 
       border:
-        1px solid
-        rgba(
-          24,
-          199,
-          181,
-          0.23
-        );
+        1px solid rgba(24, 199, 181, 0.23);
 
       font-size: 1.2rem;
 
       box-shadow:
-        0 0 16px
-        rgba(
-          24,
-          199,
-          181,
-          0.06
-        );
+        0 0 16px rgba(24, 199, 181, 0.06);
     }
 
-    /* APPLE / GOLD */
-
-    .service-card.apple
-    .service-icon {
-
+    .service-card.apple .service-icon {
       color: var(--gold-light);
 
       background:
-        rgba(
-          214,
-          173,
-          67,
-          0.075
-        );
+        rgba(214, 173, 67, 0.075);
 
       border-color:
-        rgba(
-          214,
-          173,
-          67,
-          0.25
-        );
+        rgba(214, 173, 67, 0.25);
 
       box-shadow:
-        0 0 18px
-        rgba(
-          214,
-          173,
-          67,
-          0.06
-        );
-    }
-
-    /* SECURITE / RED */
-
-    .service-card.security
-    .service-icon {
-
-      color: var(--red);
-
-      background:
-        rgba(
-          217,
-          92,
-          92,
-          0.07
-        );
-
-      border-color:
-        rgba(
-          217,
-          92,
-          92,
-          0.23
-        );
+        0 0 18px rgba(214, 173, 67, 0.06);
     }
 
     .service-card h3 {
-
       margin-bottom: 11px;
 
       color: var(--text);
@@ -1135,7 +834,6 @@
     }
 
     .service-card p {
-
       margin-bottom: 17px;
 
       color: var(--muted);
@@ -1144,10 +842,8 @@
     }
 
     .service-card ul {
-
       margin:
-        0 0 20px
-        19px;
+        0 0 20px 19px;
 
       color: var(--text-soft);
 
@@ -1155,7 +851,6 @@
     }
 
     .service-card li {
-
       margin-bottom: 6px;
     }
 
@@ -1163,17 +858,10 @@
       color: var(--green);
     }
 
-
-    /* =========================================================
-       BADGES
-    ========================================================= */
-
     .price-badge {
-
       position: absolute;
 
       top: 17px;
-
       right: 17px;
 
       padding:
@@ -1195,21 +883,7 @@
       letter-spacing: 0.03em;
     }
 
-    .price-badge.gold {
-
-      color: #211A08;
-
-      background:
-        var(--gold-light);
-    }
-
-
-    /* =========================================================
-       PRIX
-    ========================================================= */
-
     .price {
-
       display: block;
 
       margin-top: auto;
@@ -1226,7 +900,6 @@
     }
 
     .price-note {
-
       display: block;
 
       margin-top: 2px;
@@ -1238,17 +911,10 @@
       font-weight: 500;
     }
 
-
-    /* =========================================================
-       NOTE TARIFAIRE
-    ========================================================= */
-
     .pricing-note {
-
       max-width: 850px;
 
-      margin:
-        28px auto 0;
+      margin: 28px auto 0;
 
       padding:
         16px 19px;
@@ -1256,21 +922,10 @@
       color: var(--muted);
 
       background:
-        rgba(
-          10,
-          22,
-          20,
-          0.72
-        );
+        rgba(10, 22, 20, 0.72);
 
       border:
-        1px solid
-        rgba(
-          24,
-          199,
-          181,
-          0.13
-        );
+        1px solid rgba(24, 199, 181, 0.13);
 
       border-radius: 10px;
 
@@ -1283,128 +938,38 @@
       color: var(--text-soft);
     }
 
-
-    /* =========================================================
-       POURQUOI NOVAE
-    ========================================================= */
-
-    .why-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(
-            220px,
-            1fr
-          )
-        );
-
-      gap: 15px;
-    }
-
-    .why-card {
-
-      padding: 21px;
-
-      background:
-        rgba(
-          12,
-          23,
-          22,
-          0.70
-        );
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 13px;
-
-      transition:
-        border-color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .why-card:hover {
-
-      transform:
-        translateY(-2px);
-
-      border-color:
-        rgba(
-          24,
-          199,
-          181,
-          0.32
-        );
-    }
-
-    .why-card strong {
-
-      display: block;
-
-      margin-bottom: 6px;
-
-      color: var(--text);
-
-      font-size: 0.92rem;
-    }
-
-    .why-card p {
-
-      color: var(--muted);
-
-      font-size: 0.82rem;
-    }
-
-
     /* =========================================================
        TEMOIGNAGES
     ========================================================= */
 
     .testimonials-grid {
-
       display: grid;
 
       grid-template-columns:
         repeat(
           auto-fit,
-          minmax(
-            280px,
-            1fr
-          )
+          minmax(280px, 1fr)
         );
 
       gap: 18px;
     }
 
     .testimonial-card {
-
       padding: 23px;
 
       background:
-        rgba(
-          13,
-          24,
-          23,
-          0.78
-        );
+        rgba(13, 24, 23, 0.78);
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       border-radius: 14px;
     }
 
     .stars {
-
       margin-bottom: 11px;
 
-      color:
-        var(--gold-light);
+      color: var(--gold-light);
 
       letter-spacing: 2px;
 
@@ -1412,7 +977,6 @@
     }
 
     .testimonial-card p {
-
       margin-bottom: 13px;
 
       color: var(--text-soft);
@@ -1423,7 +987,6 @@
     }
 
     .testimonial-author {
-
       color: var(--text);
 
       font-size: 0.85rem;
@@ -1431,198 +994,69 @@
       font-weight: 700;
     }
 
-
     /* =========================================================
-       PRESENTATION / ABOUT
+       POURQUOI NOVAE
     ========================================================= */
 
-    .two-columns {
-
+    .why-grid {
       display: grid;
 
       grid-template-columns:
-        1fr 1fr;
-
-      gap: 55px;
-
-      align-items: center;
-    }
-
-    .two-columns h2 {
-
-      margin-bottom: 16px;
-
-      color: var(--text);
-
-      font-size:
-        clamp(
-          1.8rem,
-          4vw,
-          2.5rem
+        repeat(
+          auto-fit,
+          minmax(220px, 1fr)
         );
 
-      line-height: 1.15;
-
-      letter-spacing: -0.03em;
+      gap: 15px;
     }
 
-    .two-columns p {
-
-      margin-bottom: 13px;
-
-      color: var(--muted);
-    }
-
-    .check-list {
-
-      list-style: none;
-
-      margin-top: 20px;
-    }
-
-    .check-list li {
-
-      position: relative;
-
-      padding:
-        7px 0 7px 27px;
-
-      color: var(--text-soft);
-
-      font-size: 0.88rem;
-    }
-
-    .check-list li::before {
-
-      content: "✓";
-
-      position: absolute;
-
-      left: 0;
-
-      color: var(--green);
-
-      font-weight: 900;
-
-      text-shadow:
-        0 0 10px
-        rgba(
-          24,
-          199,
-          181,
-          0.25
-        );
-    }
-
-
-    /* INFO BOX */
-
-    .info-box {
-
-      position: relative;
-
-      padding: 31px;
+    .why-card {
+      padding: 21px;
 
       background:
-        linear-gradient(
-          145deg,
-          rgba(
-            15,
-            30,
-            28,
-            0.92
-          ),
-          rgba(
-            9,
-            19,
-            18,
-            0.92
-          )
-        );
+        rgba(12, 23, 22, 0.70);
 
       border:
-        1px solid
-        rgba(
-          24,
-          199,
-          181,
-          0.23
-        );
+        1px solid var(--border);
 
-      border-radius:
-        var(--radius);
+      border-radius: 13px;
 
-      box-shadow:
-        0 20px 55px
-        rgba(
-          0,
-          0,
-          0,
-          0.22
-        ),
-        0 0 35px
-        rgba(
-          24,
-          199,
-          181,
-          0.05
-        );
+      transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .info-box::before {
+    .why-card:hover {
+      transform: translateY(-2px);
 
-      content: "";
-
-      position: absolute;
-
-      width: 150px;
-
-      height: 150px;
-
-      top: -70px;
-
-      right: -70px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(
-            214,
-            173,
-            67,
-            0.08
-          ),
-          transparent 70%
-        );
+      border-color:
+        rgba(24, 199, 181, 0.32);
     }
 
-    .info-box h3 {
+    .why-card strong {
+      display: block;
 
-      margin-bottom: 11px;
+      margin-bottom: 6px;
 
       color: var(--text);
 
-      font-size: 1.3rem;
+      font-size: 0.92rem;
     }
 
-    .info-box p {
-
-      margin-bottom: 21px;
-
+    .why-card p {
       color: var(--muted);
-    }
 
+      font-size: 0.82rem;
+    }
 
     /* =========================================================
        CTA FINAL
     ========================================================= */
 
     .cta-final {
-
       position: relative;
 
-      padding:
-        80px 0;
+      padding: 80px 0;
 
       text-align: center;
 
@@ -1631,42 +1065,19 @@
       background:
         radial-gradient(
           circle at 50% 100%,
-          rgba(
-            24,
-            199,
-            181,
-            0.10
-          ),
+          rgba(24, 199, 181, 0.10),
           transparent 55%
         ),
-        rgba(
-          8,
-          16,
-          15,
-          0.80
-        );
+        rgba(8, 16, 15, 0.80);
 
       border-top:
-        1px solid
-        rgba(
-          24,
-          199,
-          181,
-          0.10
-        );
+        1px solid rgba(24, 199, 181, 0.10);
 
       border-bottom:
-        1px solid
-        rgba(
-          24,
-          199,
-          181,
-          0.10
-        );
+        1px solid rgba(24, 199, 181, 0.10);
     }
 
     .cta-final h2 {
-
       max-width: 760px;
 
       margin:
@@ -1675,11 +1086,7 @@
       color: var(--text);
 
       font-size:
-        clamp(
-          1.8rem,
-          4vw,
-          2.5rem
-        );
+        clamp(1.8rem, 4vw, 2.5rem);
 
       line-height: 1.15;
 
@@ -1687,7 +1094,6 @@
     }
 
     .cta-final p {
-
       max-width: 650px;
 
       margin:
@@ -1696,13 +1102,11 @@
       color: var(--muted);
     }
 
-
     /* =========================================================
        FOOTER
     ========================================================= */
 
     footer {
-
       padding:
         42px 0 23px;
 
@@ -1710,17 +1114,10 @@
         #050909;
 
       border-top:
-        1px solid
-        rgba(
-          124,
-          196,
-          188,
-          0.10
-        );
+        1px solid rgba(124, 196, 188, 0.10);
     }
 
     .footer-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -1730,7 +1127,6 @@
     }
 
     .footer-col h4 {
-
       margin-bottom: 11px;
 
       color: var(--text);
@@ -1740,7 +1136,6 @@
 
     .footer-col p,
     .footer-col a {
-
       display: block;
 
       margin-bottom: 6px;
@@ -1757,19 +1152,12 @@
     }
 
     .copyright {
-
       margin-top: 30px;
 
       padding-top: 19px;
 
       border-top:
-        1px solid
-        rgba(
-          124,
-          196,
-          188,
-          0.08
-        );
+        1px solid rgba(124, 196, 188, 0.08);
 
       color: #596B67;
 
@@ -1778,15 +1166,13 @@
       font-size: 0.75rem;
     }
 
-
     /* =========================================================
-       MOBILE
+       RESPONSIVE
     ========================================================= */
 
     @media (max-width: 850px) {
 
       .header-content {
-
         flex-direction: column;
 
         padding:
@@ -1794,49 +1180,39 @@
       }
 
       .nav-links {
-
         justify-content: center;
 
         gap:
           10px 16px;
       }
 
-      .header-content >
-      .cta-button {
-
+      .header-content > .cta-button {
         width: 100%;
       }
 
       .two-columns {
-
         grid-template-columns: 1fr;
 
         gap: 35px;
       }
 
       .footer-grid {
-
-        grid-template-columns:
-          1fr 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
       .hero-features {
-
         grid-template-columns: 1fr;
       }
     }
 
-
     @media (max-width: 600px) {
 
       .container {
-
         width:
           calc(100% - 28px);
       }
 
       body {
-
         background-size:
           48px 48px,
           48px 48px,
@@ -1845,68 +1221,53 @@
       }
 
       .hero {
-
         padding:
           70px 0 60px;
       }
 
       .hero h1 {
-
         font-size: 2.25rem;
       }
 
       .hero p {
-
         font-size: 0.93rem;
       }
 
       .hero-buttons {
-
         flex-direction: column;
       }
 
       .hero-buttons a {
-
         width: 100%;
 
         text-align: center;
       }
 
       .section {
-
-        padding: 58px 0;
+        padding:
+          58px 0;
       }
 
       .section-title {
-
         font-size: 1.7rem;
       }
 
       .services-grid {
-
         grid-template-columns: 1fr;
       }
 
       .service-card {
-
         padding: 22px;
       }
 
       .footer-grid {
-
         grid-template-columns: 1fr;
       }
 
       .nav-links a {
-
         font-size: 0.78rem;
       }
     }
-
-
-    /* =========================================================
-       ACCESSIBILITÉ
-    ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -1920,17 +1281,12 @@
         transition: none !important;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =======================================================
-       HEADER
-  ======================================================= -->
+  <!-- HEADER -->
 
   <header>
 
@@ -1947,11 +1303,13 @@
         </span>
 
         <span class="logo-name">
+
           Novae <span>Systems</span>
 
           <span class="logo-subtitle">
             Modern IT
           </span>
+
         </span>
 
       </a>
@@ -1979,7 +1337,7 @@
         </a>
 
         <a href="#pourquoi-moi">
-          Pourquoi moi ?
+          Pourquoi Novae ?
         </a>
 
         <a href="#contact">
@@ -2001,56 +1359,43 @@
   </header>
 
 
-
   <main>
 
-
-    <!-- =======================================================
-         HERO
-    ======================================================= -->
+    <!-- HERO -->
 
     <section class="hero">
 
       <div class="container hero-content">
 
-
         <div class="hero-label">
-          Premium local IT support
+          Support informatique local
         </div>
-
-
-        <!--
-          Nouvelle idée :
-          symbole central qui reprend les couleurs
-          de l'identité Novae.
-        -->
 
         <div class="hero-symbol">
           ◈
         </div>
 
-
         <h1>
 
-          IT support and Apple
-          solutions for
+          Assistance informatique &
+          solutions Apple pour
 
           <span class="highlight">
-            independents and small businesses
+            particuliers, indépendants
+            et petites entreprises
           </span>
 
         </h1>
 
-
         <p>
 
-          Novae Systems accompagne les particuliers,
-          indépendants et petites entreprises avec des
-          solutions informatiques claires, pratiques et
-          adaptées à leurs besoins.
+          Novae Systems vous accompagne avec des
+          solutions informatiques claires, pratiques
+          et adaptées à vos besoins : dépannage,
+          optimisation, Apple, Windows, récupération
+          de données et création de sites web.
 
         </p>
-
 
         <div class="hero-buttons">
 
@@ -2130,15 +1475,11 @@
     </section>
 
 
-
-    <!-- =======================================================
-         PRESENTATION
-    ======================================================= -->
+    <!-- PRESENTATION -->
 
     <section class="section">
 
       <div class="container two-columns">
-
 
         <div>
 
@@ -2152,9 +1493,10 @@
           </h2>
 
           <p>
-            Un ordinateur lent, une panne, un problème
-            réseau ou simplement besoin d'aide pour votre
-            environnement informatique ?
+            Votre ordinateur est lent, en panne,
+            ou votre réseau vous pose problème ?
+            Vous avez simplement besoin d'aide pour
+            votre environnement informatique ?
           </p>
 
           <p>
@@ -2162,7 +1504,6 @@
             compréhensible et des solutions adaptées
             à votre situation.
           </p>
-
 
           <ul class="check-list">
 
@@ -2194,10 +1535,10 @@
           </h3>
 
           <p>
-            Vous n'êtes pas certain du service dont vous
-            avez besoin ? Décrivez simplement le problème
-            et nous déterminerons ensemble la meilleure
-            solution.
+            Vous n'êtes pas certain du service dont
+            vous avez besoin ? Décrivez simplement
+            votre problème et nous déterminerons
+            ensemble la meilleure solution.
           </p>
 
           <a
@@ -2214,10 +1555,7 @@
     </section>
 
 
-
-    <!-- =======================================================
-         PARTICULIERS
-    ======================================================= -->
+    <!-- PARTICULIERS -->
 
     <section
       id="particuliers"
@@ -2226,7 +1564,6 @@
 
       <div class="container">
 
-
         <div class="section-header">
 
           <span class="section-label">
@@ -2234,13 +1571,14 @@
           </span>
 
           <h2 class="section-title">
-            Votre informatique, sans prise de tête.
+            Votre informatique,
+            sans prise de tête.
           </h2>
 
           <p class="section-subtitle">
             Des prestations simples et transparentes
-            pour retrouver un ordinateur fiable et
-            performant.
+            pour retrouver un ordinateur fiable
+            et performant.
           </p>
 
         </div>
@@ -2249,7 +1587,7 @@
         <div class="services-grid">
 
 
-          <!-- PC / MAC LENT -->
+          <!-- PACK PC / MAC -->
 
           <article class="service-card">
 
@@ -2266,9 +1604,9 @@
             </h3>
 
             <p>
-              Ton ordinateur rame, met 10 minutes à
-              démarrer ou plante souvent ? Je nettoie,
-              optimise et sécurise ton appareil.
+              Votre ordinateur rame, met 10 minutes
+              à démarrer ou plante souvent ? Je nettoie,
+              optimise et sécurise votre appareil.
             </p>
 
             <ul>
@@ -2314,7 +1652,6 @@
           </article>
 
 
-
           <!-- DEPANNAGE -->
 
           <article class="service-card">
@@ -2328,8 +1665,9 @@
             </h3>
 
             <p>
-              Écran bleu, ordinateur qui ne démarre plus,
-              perte de données ou problème urgent ?
+              Écran bleu, ordinateur qui ne démarre
+              plus, perte de données ou problème
+              urgent ?
             </p>
 
             <ul>
@@ -2357,10 +1695,13 @@
             </ul>
 
             <span class="price">
+
               Diagnostic : gratuit si réparation
+
               <span class="price-note">
                 Taux horaire : 70 EUR / h · minimum 1 h
               </span>
+
             </span>
 
             <a
@@ -2372,7 +1713,6 @@
             </a>
 
           </article>
-
 
 
           <!-- RECUPERATION -->
@@ -2390,7 +1730,7 @@
             <p>
               Disque dur endommagé, fichiers supprimés
               ou panne de stockage ? Je tente de récupérer
-              tes données importantes.
+              vos données importantes.
             </p>
 
             <ul>
@@ -2414,10 +1754,14 @@
             </ul>
 
             <span class="price">
+
               Diagnostic : 40 EUR
+
               <span class="price-note">
-                Récupération : 80–200 EUR+ selon complexité
+                Récupération : 80–200 EUR+
+                selon complexité
               </span>
+
             </span>
 
             <a
@@ -2431,8 +1775,7 @@
           </article>
 
 
-
-          <!-- NOUVEAU PC -->
+          <!-- NOUVEAU PC / MAC -->
 
           <article class="service-card apple">
 
@@ -2445,9 +1788,9 @@
             </h3>
 
             <p>
-              Tu viens d'acheter un nouvel ordinateur ?
+              Vous venez d'acheter un nouvel ordinateur ?
               Je m'occupe de la configuration et du
-              transfert de tes données.
+              transfert de vos données.
             </p>
 
             <ul>
@@ -2497,8 +1840,8 @@
             Tarification transparente.
           </strong>
 
-          Les prestations nécessitant du matériel ou
-          une intervention spécifique font l'objet
+          Les prestations nécessitant du matériel
+          ou une intervention spécifique font l'objet
           d'une estimation préalable.
 
         </div>
@@ -2508,10 +1851,7 @@
     </section>
 
 
-
-    <!-- =======================================================
-         PROS
-    ======================================================= -->
+    <!-- PROS -->
 
     <section
       id="pros"
@@ -2520,7 +1860,6 @@
 
       <div class="container">
 
-
         <div class="section-header">
 
           <span class="section-label">
@@ -2528,7 +1867,8 @@
           </span>
 
           <h2 class="section-title">
-            Votre informatique doit travailler pour vous.
+            Votre informatique doit
+            travailler pour vous.
           </h2>
 
           <p class="section-subtitle">
@@ -2597,7 +1937,6 @@
           </article>
 
 
-
           <article class="service-card">
 
             <span class="price-badge">
@@ -2654,7 +1993,6 @@
             </a>
 
           </article>
-
 
 
           <article class="service-card apple">
@@ -2721,10 +2059,7 @@
     </section>
 
 
-
-    <!-- =======================================================
-         SITES WEB
-    ======================================================= -->
+    <!-- SITES WEB -->
 
     <section
       id="sites"
@@ -2733,7 +2068,6 @@
 
       <div class="container">
 
-
         <div class="section-header">
 
           <span class="section-label">
@@ -2741,12 +2075,13 @@
           </span>
 
           <h2 class="section-title">
-            Une présence digitale qui vous ressemble.
+            Une présence digitale
+            qui vous ressemble.
           </h2>
 
           <p class="section-subtitle">
-            Des sites modernes et performants pour
-            indépendants et petites entreprises.
+            Des sites modernes et performants
+            pour indépendants et petites entreprises.
           </p>
 
         </div>
@@ -2766,8 +2101,8 @@
             </h3>
 
             <p>
-              Une page unique, claire et efficace pour
-              présenter ton activité.
+              Une page unique, claire et efficace
+              pour présenter votre activité.
             </p>
 
             <ul>
@@ -2809,7 +2144,6 @@
           </article>
 
 
-
           <article class="service-card">
 
             <span class="price-badge">
@@ -2826,7 +2160,7 @@
 
             <p>
               Un site plus développé pour présenter
-              ton entreprise et ton activité.
+              votre entreprise et votre activité.
             </p>
 
             <ul>
@@ -2864,7 +2198,6 @@
           </article>
 
 
-
           <article class="service-card">
 
             <div class="service-icon">
@@ -2876,8 +2209,8 @@
             </h3>
 
             <p>
-              Je m'occupe de ton site après sa mise
-              en ligne.
+              Je m'occupe de votre site après
+              sa mise en ligne.
             </p>
 
             <ul>
@@ -2921,10 +2254,7 @@
     </section>
 
 
-
-    <!-- =======================================================
-         TEMOIGNAGES
-    ======================================================= -->
+    <!-- TEMOIGNAGES -->
 
     <section
       id="temoignages"
@@ -2932,7 +2262,6 @@
     >
 
       <div class="container">
-
 
         <div class="section-header">
 
@@ -2948,7 +2277,6 @@
 
 
         <div class="testimonials-grid">
-
 
           <article class="testimonial-card">
 
@@ -3012,10 +2340,7 @@
     </section>
 
 
-
-    <!-- =======================================================
-         POURQUOI NOVAE
-    ======================================================= -->
+    <!-- POURQUOI NOVAE -->
 
     <section
       id="pourquoi-moi"
@@ -3023,7 +2348,6 @@
     >
 
       <div class="container">
-
 
         <div class="section-header">
 
@@ -3039,7 +2363,6 @@
 
 
         <div class="why-grid">
-
 
           <article class="why-card">
 
@@ -3074,7 +2397,7 @@
             </strong>
 
             <p>
-              Assistance spécialisée dans ton
+              Assistance spécialisée dans votre
               environnement Apple.
             </p>
 
@@ -3127,10 +2450,7 @@
     </section>
 
 
-
-    <!-- =======================================================
-         CTA
-    ======================================================= -->
+    <!-- CTA FINAL -->
 
     <section
       id="contact"
@@ -3145,11 +2465,10 @@
         </h2>
 
         <p>
-          Décris-moi simplement ton besoin.
-          Je t'aiderai à trouver la solution la plus
-          adaptée.
+          Décrivez-moi simplement votre besoin.
+          Je vous aiderai à trouver la solution
+          la plus adaptée.
         </p>
-
 
         <div class="hero-buttons">
 
@@ -3176,18 +2495,13 @@
   </main>
 
 
-
-  <!-- =======================================================
-       FOOTER
-    ======================================================= -->
+  <!-- FOOTER -->
 
   <footer>
 
     <div class="container">
 
-
       <div class="footer-grid">
-
 
         <div class="footer-col">
 
@@ -3259,7 +2573,9 @@
       <div class="copyright">
 
         © 2026 Novae Systems — Tous droits réservés.
+
         <br>
+
         Régime de franchise de taxe — TVA non applicable.
 
       </div>
@@ -3267,7 +2583,6 @@
     </div>
 
   </footer>
-
 
 </body>
 </html>
