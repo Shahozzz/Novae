@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="fr-BE">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Novae Systems | Support informatique, Apple & solutions digitales</title>
+  <title>Novae Systems | Support informatique & solutions digitales</title>
 
   <meta
     name="description"
-    content="Novae Systems accompagne particuliers, indépendants et petites entreprises en Belgique : support informatique, Apple, Mac & Windows, récupération de données, sites web et solutions digitales."
+    content="Novae Systems accompagne les particuliers, indépendants et petites entreprises en informatique, Apple, Windows et création de sites web à Chaumont-Gistoux et dans le Brabant wallon."
   >
-  <meta name="theme-color" content="#080D0D">
+
   <style>
+    /* =========================================================
+       IDENTITÉ VISUELLE NOVAE SYSTEMS
+       Palette inspirée du site actuel
+       ========================================================= */
+
     :root {
-      --bg: #080D0D;
-      --bg-soft: #0B1111;
-      --bg-card: #0D1515;
+      --green: #1f9d55;
+      --green-dark: #147a40;
+      --green-light: #e5f6eb;
 
-      --grid: rgba(105, 190, 181, 0.055);
+      --background: #f7f9f7;
+      --white: #ffffff;
 
-      --green: #18C7B5;
-      --green-light: #39E6CF;
-      --green-dark: #109987;
+      --text: #17211b;
+      --text-light: #68736c;
 
-      --gold: #D6AD43;
-      --gold-light: #F0C95B;
+      --border: #dfe7e1;
 
-      --red: #D95C5C;
-
-      --text: #F2F6F5;
-      --text-soft: #C2CECC;
-      --muted: #899996;
-
-      --border: rgba(124, 196, 188, 0.18);
-      --border-hover: rgba(57, 230, 207, 0.42);
-
-      --radius: 16px;
+      --shadow:
+        0 12px 35px rgba(23, 33, 27, 0.08);
     }
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
 
     * {
       margin: 0;
@@ -46,7 +47,6 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
     }
 
     body {
@@ -59,1297 +59,818 @@
         Arial,
         sans-serif;
 
+      background: var(--background);
       color: var(--text);
-      background-color: var(--bg);
-
-      background-image:
-        linear-gradient(
-          var(--grid) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          var(--grid) 1px,
-          transparent 1px
-        ),
-        radial-gradient(
-          circle at 10% 20%,
-          rgba(24, 199, 181, 0.075),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 90% 60%,
-          rgba(214, 173, 67, 0.045),
-          transparent 28%
-        );
-
-      background-size:
-        64px 64px,
-        64px 64px,
-        100% 100%,
-        100% 100%;
 
       line-height: 1.6;
-      min-height: 100vh;
     }
 
-    body::before {
-      content: "";
-
-      position: fixed;
-      inset: 0;
-
-      pointer-events: none;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.12),
-          transparent 25%,
-          transparent 75%,
-          rgba(0, 0, 0, 0.12)
-        );
-
-      z-index: -1;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
       color: inherit;
     }
 
+
+    /* =========================================================
+       CONTAINER
+       ========================================================= */
+
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
 
+
     /* =========================================================
        HEADER
-    ========================================================= */
+       ========================================================= */
 
     header {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
 
-      background: rgba(7, 12, 12, 0.90);
+      background: rgba(247, 249, 247, 0.96);
 
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
 
-      border-bottom:
-        1px solid rgba(124, 196, 188, 0.13);
+      backdrop-filter: blur(10px);
     }
 
-    .header-content {
-      min-height: 78px;
+    .header-inner {
+      min-height: 76px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       gap: 25px;
-      flex-wrap: wrap;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      color: var(--text);
       text-decoration: none;
 
-      font-size: 1.25rem;
+      font-size: 1.45rem;
       font-weight: 800;
 
-      letter-spacing: -0.025em;
+      color: var(--green-dark);
+
+      letter-spacing: -0.03em;
+
       white-space: nowrap;
     }
 
-    .logo-mark {
-      width: 38px;
-      height: 38px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 10px;
-
-      background:
-        rgba(24, 199, 181, 0.12);
-
-      border:
-        1px solid rgba(24, 199, 181, 0.40);
-
-      color: var(--green-light);
-
-      font-size: 0.9rem;
-
-      box-shadow:
-        0 0 18px rgba(24, 199, 181, 0.10);
-    }
-
-    .logo-name span {
-      color: var(--green);
-    }
-
-    .logo-subtitle {
-      display: block;
-
-      margin-top: -2px;
-
-      color: var(--green);
-
-      font-size: 0.58rem;
-      font-weight: 700;
-
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
+    nav {
       display: flex;
       align-items: center;
 
       gap: 22px;
-      flex-wrap: wrap;
     }
 
-    .nav-links a {
-      color: var(--muted);
-
+    nav a {
       text-decoration: none;
 
-      font-size: 0.85rem;
+      color: var(--text);
+
+      font-size: 0.93rem;
       font-weight: 600;
 
       transition: color 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--green-light);
+    nav a:hover {
+      color: var(--green);
     }
 
-    /* =========================================================
-       BOUTONS
-    ========================================================= */
+    .header-button {
+      display: inline-block;
 
-    .cta-button,
-    .secondary-button {
-      display: inline-flex;
+      background: var(--green);
+      color: white;
 
-      align-items: center;
-      justify-content: center;
+      padding: 11px 18px;
 
-      min-height: 46px;
-
-      padding: 11px 21px;
-
-      border-radius: 9px;
+      border-radius: 8px;
 
       text-decoration: none;
 
-      font-size: 0.88rem;
+      font-weight: 700;
+
+      white-space: nowrap;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .header-button:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+
+    /* =========================================================
+       BOUTONS
+       ========================================================= */
+
+    .button {
+      display: inline-block;
+
+      padding: 13px 21px;
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
       font-weight: 750;
 
       transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
         background 0.2s ease,
-        border-color 0.2s ease;
+        color 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .cta-button {
-      background:
-        linear-gradient(
-          135deg,
-          var(--green),
-          #14B9A9
-        );
-
-      color: #04100E;
-
-      border:
-        1px solid rgba(57, 230, 207, 0.25);
-
-      box-shadow:
-        0 0 18px rgba(24, 199, 181, 0.12);
+    .button-primary {
+      background: var(--green);
+      color: white;
     }
 
-    .cta-button:hover {
-      transform: translateY(-2px);
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--green-light),
-          var(--green)
-        );
-
-      box-shadow:
-        0 0 20px rgba(57, 230, 207, 0.28),
-        0 0 45px rgba(24, 199, 181, 0.10);
+    .button-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
     }
 
-    .secondary-button {
-      color: var(--text);
+    .button-secondary {
+      background: transparent;
 
-      background:
-        rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--green);
 
-      border:
-        1px solid var(--border);
+      color: var(--green-dark);
     }
 
-    .secondary-button:hover {
-      color: var(--green-light);
-
-      border-color: var(--border-hover);
-
-      background:
-        rgba(24, 199, 181, 0.055);
+    .button-secondary:hover {
+      background: var(--green-light);
     }
+
 
     /* =========================================================
        HERO
-    ========================================================= */
+       ========================================================= */
 
     .hero {
-      position: relative;
-
-      padding: 110px 0 85px;
-
-      text-align: center;
-
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 620px;
-      height: 620px;
-
-      top: -390px;
-      left: 50%;
-
-      transform: translateX(-50%);
+      padding: 100px 0 90px;
 
       background:
         radial-gradient(
-          circle,
-          rgba(24, 199, 181, 0.12),
-          transparent 67%
-        );
-
-      pointer-events: none;
+          circle at 85% 20%,
+          rgba(31, 157, 85, 0.12),
+          transparent 30%
+        ),
+        var(--background);
     }
 
-    .hero::after {
-      content: "";
+    .hero-grid {
+      display: grid;
 
-      position: absolute;
+      grid-template-columns: 1.15fr 0.85fr;
 
-      width: 360px;
-      height: 360px;
-
-      right: -180px;
-      bottom: -200px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(214, 173, 67, 0.065),
-          transparent 70%
-        );
-
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-
-      max-width: 920px;
-
-      margin: 0 auto;
-    }
-
-    .hero-label {
-      display: inline-flex;
+      gap: 70px;
 
       align-items: center;
-      gap: 8px;
+    }
 
-      padding: 7px 14px;
+    .eyebrow {
+      display: inline-block;
 
-      margin-bottom: 28px;
+      margin-bottom: 18px;
 
-      color: var(--green-light);
+      color: var(--green-dark);
 
-      background:
-        rgba(24, 199, 181, 0.045);
+      font-size: 0.82rem;
 
-      border:
-        1px solid rgba(24, 199, 181, 0.25);
-
-      border-radius: 999px;
-
-      font-size: 0.70rem;
       font-weight: 800;
 
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-    }
 
-    .hero-label::before {
-      content: "";
-
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
-      background: var(--green);
-
-      box-shadow:
-        0 0 9px var(--green);
-    }
-
-    .hero-symbol {
-      width: 66px;
-      height: 66px;
-
-      margin: 0 auto 30px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 15px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(24, 199, 181, 0.10),
-          rgba(214, 173, 67, 0.06)
-        );
-
-      border:
-        1px solid rgba(24, 199, 181, 0.32);
-
-      color: var(--gold-light);
-
-      font-size: 1.55rem;
-
-      box-shadow:
-        0 0 20px rgba(24, 199, 181, 0.07),
-        0 0 35px rgba(214, 173, 67, 0.05);
+      letter-spacing: 0.12em;
     }
 
     .hero h1 {
-      max-width: 900px;
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
 
-      margin: 0 auto 23px;
-
-      color: var(--text);
-
-      font-size:
-        clamp(2.4rem, 6vw, 4.7rem);
-
-      line-height: 1.04;
+      line-height: 1.02;
 
       letter-spacing: -0.055em;
+
+      margin-bottom: 25px;
     }
 
-    .hero h1 .highlight {
-      color: var(--green-light);
-
-      text-shadow:
-        0 0 30px rgba(57, 230, 207, 0.15);
+    .hero h1 span {
+      color: var(--green);
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 650px;
 
-      margin: 0 auto 30px;
+      color: var(--text-light);
 
-      color: var(--muted);
+      font-size: 1.12rem;
 
-      font-size:
-        clamp(0.95rem, 2vw, 1.08rem);
+      margin-bottom: 30px;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
 
-      justify-content: center;
+      flex-wrap: wrap;
 
       gap: 12px;
-
-      flex-wrap: wrap;
     }
 
-    .hero-features {
-      display: grid;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+    /* =========================================================
+       HERO CARD
+       ========================================================= */
 
-      gap: 14px;
+    .hero-card {
+      background: var(--white);
 
-      margin-top: 55px;
+      border: 1px solid var(--border);
 
-      text-align: left;
+      border-radius: 18px;
+
+      padding: 34px;
+
+      box-shadow: var(--shadow);
     }
 
-    .hero-feature {
-      padding: 19px;
+    .hero-card small {
+      color: var(--green-dark);
 
-      background:
-        rgba(10, 19, 18, 0.78);
+      text-transform: uppercase;
 
-      border:
-        1px solid var(--border);
+      letter-spacing: 0.1em;
 
-      border-radius: 13px;
+      font-weight: 800;
     }
 
-    .hero-feature-icon {
-      margin-bottom: 10px;
+    .hero-card h2 {
+      font-size: 1.8rem;
+
+      line-height: 1.15;
+
+      margin: 12px 0 22px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      padding: 12px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--text-light);
+    }
+
+    .hero-card li::before {
+      content: "✓";
 
       color: var(--green);
 
-      font-size: 1.15rem;
+      font-weight: 800;
+
+      margin-right: 10px;
     }
 
-    .hero-feature strong {
-      display: block;
-
-      margin-bottom: 3px;
-
-      color: var(--text);
-
-      font-size: 0.9rem;
-    }
-
-    .hero-feature span {
-      color: var(--muted);
-
-      font-size: 0.76rem;
-    }
 
     /* =========================================================
        SECTIONS
-    ========================================================= */
+       ========================================================= */
 
     .section {
-      position: relative;
-
-      padding: 80px 0;
+      padding: 90px 0;
     }
 
     .section-alt {
-      background:
-        rgba(8, 16, 16, 0.76);
-
-      border-top:
-        1px solid rgba(124, 196, 188, 0.06);
-
-      border-bottom:
-        1px solid rgba(124, 196, 188, 0.06);
+      background: var(--white);
     }
 
-    .section-header {
-      max-width: 760px;
+    .section-heading {
+      max-width: 720px;
 
-      margin: 0 auto 42px;
+      margin-bottom: 42px;
+    }
 
+    .section-heading.center {
       text-align: center;
+
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .section-label {
-      display: block;
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
 
-      margin-bottom: 8px;
+      line-height: 1.08;
 
-      color: var(--green);
+      letter-spacing: -0.04em;
 
-      font-size: 0.70rem;
-      font-weight: 800;
-
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
-    .section-title {
-      margin-bottom: 13px;
+    .section-heading p {
+      color: var(--text-light);
 
-      color: var(--text);
-
-      font-size:
-        clamp(1.75rem, 4vw, 2.45rem);
-
-      line-height: 1.15;
-
-      letter-spacing: -0.03em;
+      font-size: 1.05rem;
     }
 
-    .section-subtitle {
-      color: var(--muted);
-
-      font-size: 0.94rem;
-    }
 
     /* =========================================================
-       PRESENTATION
-    ========================================================= */
+       SERVICES
+       ========================================================= */
 
-    .two-columns {
+    .service-grid {
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
 
-      gap: 55px;
-
-      align-items: center;
-    }
-
-    .two-columns h2 {
-      margin-bottom: 16px;
-
-      color: var(--text);
-
-      font-size:
-        clamp(1.8rem, 4vw, 2.5rem);
-
-      line-height: 1.15;
-
-      letter-spacing: -0.03em;
-    }
-
-    .two-columns p {
-      margin-bottom: 13px;
-
-      color: var(--muted);
-    }
-
-    .check-list {
-      list-style: none;
-
-      margin-top: 20px;
-    }
-
-    .check-list li {
-      position: relative;
-
-      padding:
-        7px 0 7px 27px;
-
-      color: var(--text-soft);
-
-      font-size: 0.88rem;
-    }
-
-    .check-list li::before {
-      content: "✓";
-
-      position: absolute;
-
-      left: 0;
-
-      color: var(--green);
-
-      font-weight: 900;
-
-      text-shadow:
-        0 0 10px rgba(24, 199, 181, 0.25);
-    }
-
-    .info-box {
-      position: relative;
-
-      padding: 31px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(15, 30, 28, 0.92),
-          rgba(9, 19, 18, 0.92)
-        );
-
-      border:
-        1px solid rgba(24, 199, 181, 0.23);
-
-      border-radius: var(--radius);
-
-      box-shadow:
-        0 20px 55px rgba(0, 0, 0, 0.22),
-        0 0 35px rgba(24, 199, 181, 0.05);
-    }
-
-    .info-box h3 {
-      margin-bottom: 11px;
-
-      color: var(--text);
-
-      font-size: 1.3rem;
-    }
-
-    .info-box p {
-      margin-bottom: 21px;
-
-      color: var(--muted);
-    }
-
-    /* =========================================================
-       CARTES
-    ========================================================= */
-
-    .services-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(285px, 1fr)
-        );
-
-      gap: 18px;
+      gap: 22px;
     }
 
     .service-card {
-      position: relative;
-
       display: flex;
+
       flex-direction: column;
 
-      padding: 25px;
+      min-height: 310px;
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(14, 24, 23, 0.94),
-          rgba(9, 17, 17, 0.96)
-        );
+      padding: 30px;
 
-      border:
-        1px solid var(--border);
+      background: var(--white);
 
-      border-radius: var(--radius);
+      border: 1px solid var(--border);
 
-      overflow: hidden;
+      border-radius: 15px;
 
       transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .service-card::before {
-      content: "";
-
-      position: absolute;
-
-      width: 170px;
-      height: 170px;
-
-      right: -100px;
-      top: -100px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(24, 199, 181, 0.075),
-          transparent 70%
-        );
-
-      pointer-events: none;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .service-card:hover {
       transform: translateY(-4px);
 
-      border-color:
-        var(--border-hover);
-
-      box-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.28),
-        0 0 28px rgba(24, 199, 181, 0.055);
+      box-shadow: var(--shadow);
     }
 
-    .service-icon {
-      width: 46px;
-      height: 46px;
+    .service-number {
+      color: var(--green);
 
-      display: flex;
+      font-weight: 800;
 
-      align-items: center;
-      justify-content: center;
+      font-size: 0.8rem;
 
-      margin-bottom: 18px;
+      letter-spacing: 0.1em;
 
-      border-radius: 12px;
-
-      color: var(--green-light);
-
-      background:
-        rgba(24, 199, 181, 0.08);
-
-      border:
-        1px solid rgba(24, 199, 181, 0.23);
-
-      font-size: 1.2rem;
-
-      box-shadow:
-        0 0 16px rgba(24, 199, 181, 0.06);
-    }
-
-    .service-card.apple .service-icon {
-      color: var(--gold-light);
-
-      background:
-        rgba(214, 173, 67, 0.075);
-
-      border-color:
-        rgba(214, 173, 67, 0.25);
-
-      box-shadow:
-        0 0 18px rgba(214, 173, 67, 0.06);
+      margin-bottom: 24px;
     }
 
     .service-card h3 {
-      margin-bottom: 11px;
+      font-size: 1.5rem;
 
-      color: var(--text);
-
-      font-size: 1.16rem;
-
-      line-height: 1.3;
+      margin-bottom: 12px;
     }
 
     .service-card p {
-      margin-bottom: 17px;
+      color: var(--text-light);
 
-      color: var(--muted);
-
-      font-size: 0.88rem;
+      margin-bottom: 24px;
     }
 
-    .service-card ul {
-      margin:
-        0 0 20px 19px;
-
-      color: var(--text-soft);
-
-      font-size: 0.84rem;
-    }
-
-    .service-card li {
-      margin-bottom: 6px;
-    }
-
-    .service-card li::marker {
-      color: var(--green);
-    }
-
-    .price-badge {
-      position: absolute;
-
-      top: 17px;
-      right: 17px;
-
-      padding:
-        5px 10px;
-
-      border-radius: 999px;
-
-      color: #07100D;
-
-      background:
-        var(--green);
-
-      font-size: 0.67rem;
-
-      font-weight: 800;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.03em;
-    }
-
-    .price {
-      display: block;
-
+    .service-link {
       margin-top: auto;
 
-      margin-bottom: 17px;
-
-      color: var(--green-light);
-
-      font-size: 1.08rem;
-
-      font-weight: 800;
-
-      line-height: 1.45;
-    }
-
-    .price-note {
-      display: block;
-
-      margin-top: 2px;
-
-      color: var(--muted);
-
-      font-size: 0.72rem;
-
-      font-weight: 500;
-    }
-
-    .pricing-note {
-      max-width: 850px;
-
-      margin: 28px auto 0;
-
-      padding:
-        16px 19px;
-
-      color: var(--muted);
-
-      background:
-        rgba(10, 22, 20, 0.72);
-
-      border:
-        1px solid rgba(24, 199, 181, 0.13);
-
-      border-radius: 10px;
-
-      text-align: center;
-
-      font-size: 0.79rem;
-    }
-
-    .pricing-note strong {
-      color: var(--text-soft);
-    }
-
-    /* =========================================================
-       TEMOIGNAGES
-    ========================================================= */
-
-    .testimonials-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(280px, 1fr)
-        );
-
-      gap: 18px;
-    }
-
-    .testimonial-card {
-      padding: 23px;
-
-      background:
-        rgba(13, 24, 23, 0.78);
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 14px;
-    }
-
-    .stars {
-      margin-bottom: 11px;
-
-      color: var(--gold-light);
-
-      letter-spacing: 2px;
-
-      font-size: 0.83rem;
-    }
-
-    .testimonial-card p {
-      margin-bottom: 13px;
-
-      color: var(--text-soft);
-
-      font-style: italic;
-
-      font-size: 0.88rem;
-    }
-
-    .testimonial-author {
-      color: var(--text);
-
-      font-size: 0.85rem;
-
-      font-weight: 700;
-    }
-
-    /* =========================================================
-       POURQUOI NOVAE
-    ========================================================= */
-
-    .why-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(220px, 1fr)
-        );
-
-      gap: 15px;
-    }
-
-    .why-card {
-      padding: 21px;
-
-      background:
-        rgba(12, 23, 22, 0.70);
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 13px;
-
-      transition:
-        border-color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .why-card:hover {
-      transform: translateY(-2px);
-
-      border-color:
-        rgba(24, 199, 181, 0.32);
-    }
-
-    .why-card strong {
-      display: block;
-
-      margin-bottom: 6px;
-
-      color: var(--text);
-
-      font-size: 0.92rem;
-    }
-
-    .why-card p {
-      color: var(--muted);
-
-      font-size: 0.82rem;
-    }
-
-    /* =========================================================
-       CTA FINAL
-    ========================================================= */
-
-    .cta-final {
-      position: relative;
-
-      padding: 80px 0;
-
-      text-align: center;
-
-      overflow: hidden;
-
-      background:
-        radial-gradient(
-          circle at 50% 100%,
-          rgba(24, 199, 181, 0.10),
-          transparent 55%
-        ),
-        rgba(8, 16, 15, 0.80);
-
-      border-top:
-        1px solid rgba(24, 199, 181, 0.10);
-
-      border-bottom:
-        1px solid rgba(24, 199, 181, 0.10);
-    }
-
-    .cta-final h2 {
-      max-width: 760px;
-
-      margin:
-        0 auto 13px;
-
-      color: var(--text);
-
-      font-size:
-        clamp(1.8rem, 4vw, 2.5rem);
-
-      line-height: 1.15;
-
-      letter-spacing: -0.03em;
-    }
-
-    .cta-final p {
-      max-width: 650px;
-
-      margin:
-        0 auto 25px;
-
-      color: var(--muted);
-    }
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      padding:
-        42px 0 23px;
-
-      background:
-        #050909;
-
-      border-top:
-        1px solid rgba(124, 196, 188, 0.10);
-    }
-
-    .footer-grid {
-      display: grid;
-
-      grid-template-columns:
-        1.4fr 1fr 1fr;
-
-      gap: 30px;
-    }
-
-    .footer-col h4 {
-      margin-bottom: 11px;
-
-      color: var(--text);
-
-      font-size: 1rem;
-    }
-
-    .footer-col p,
-    .footer-col a {
-      display: block;
-
-      margin-bottom: 6px;
-
-      color: var(--muted);
+      color: var(--green-dark);
 
       text-decoration: none;
 
-      font-size: 0.82rem;
+      font-weight: 800;
     }
 
-    .footer-col a:hover {
-      color: var(--green-light);
+    .service-link:hover {
+      color: var(--green);
+    }
+
+
+    /* =========================================================
+       POINTS FORTS
+       ========================================================= */
+
+    .trust-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 20px;
+    }
+
+    .trust-item {
+      padding: 25px 0;
+
+      border-top: 2px solid var(--green);
+    }
+
+    .trust-item strong {
+      display: block;
+
+      font-size: 1.1rem;
+
+      margin-bottom: 7px;
+    }
+
+    .trust-item span {
+      color: var(--text-light);
+
+      font-size: 0.95rem;
+    }
+
+
+    /* =========================================================
+       À PROPOS
+       ========================================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 0.9fr 1.1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--green-light);
+
+      border: 1px solid rgba(31, 157, 85, 0.18);
+
+      border-radius: 18px;
+
+      padding: 38px;
+    }
+
+    .quote {
+      font-size: 1.65rem;
+
+      line-height: 1.25;
+
+      font-weight: 750;
+
+      color: var(--green-dark);
+    }
+
+    .location {
+      margin-top: 24px;
+
+      color: var(--text-light);
+    }
+
+    .about-copy p {
+      color: var(--text-light);
+
+      margin-bottom: 18px;
+
+      font-size: 1.05rem;
+    }
+
+
+    /* =========================================================
+       TÉMOIGNAGES
+       ========================================================= */
+
+    .testimonial-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
+    .testimonial {
+      background: var(--background);
+
+      border: 1px solid var(--border);
+
+      border-radius: 14px;
+
+      padding: 26px;
+    }
+
+    .stars {
+      color: var(--green);
+
+      letter-spacing: 0.1em;
+
+      margin-bottom: 14px;
+    }
+
+    .testimonial p {
+      color: var(--text-light);
+
+      font-style: italic;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* =========================================================
+       CTA FINAL
+       ========================================================= */
+
+    .final-cta {
+      background: var(--green);
+
+      color: white;
+
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      max-width: 700px;
+
+      margin: auto auto 14px;
+
+      font-size: clamp(2rem, 4vw, 3.2rem);
+
+      line-height: 1.08;
+
+      letter-spacing: -0.04em;
+    }
+
+    .final-cta p {
+      max-width: 620px;
+
+      margin: 0 auto 28px;
+
+      color: rgba(255,255,255,0.88);
+    }
+
+    .final-cta .button-primary {
+      background: white;
+
+      color: var(--green-dark);
+    }
+
+    .final-cta .button-primary:hover {
+      background: var(--green-light);
+    }
+
+    .final-cta .button-secondary {
+      border-color: white;
+
+      color: white;
+    }
+
+    .final-cta .button-secondary:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      background: var(--white);
+
+      border-top: 1px solid var(--border);
+
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      align-items: flex-start;
+    }
+
+    .footer-brand strong {
+      display: block;
+
+      font-size: 1.25rem;
+
+      margin-bottom: 7px;
+
+      color: var(--green-dark);
+    }
+
+    .footer-brand span,
+    .footer-contact span {
+      color: var(--text-light);
+
+      font-size: 0.9rem;
+    }
+
+    .footer-contact {
+      text-align: right;
+    }
+
+    .footer-contact a {
+      display: block;
+
+      color: var(--text);
+
+      text-decoration: none;
+
+      margin-bottom: 5px;
+    }
+
+    .footer-contact a:hover {
+      color: var(--green);
     }
 
     .copyright {
       margin-top: 30px;
 
-      padding-top: 19px;
+      padding-top: 20px;
 
-      border-top:
-        1px solid rgba(124, 196, 188, 0.08);
+      border-top: 1px solid var(--border);
 
-      color: #596B67;
+      color: var(--text-light);
+
+      font-size: 0.82rem;
 
       text-align: center;
-
-      font-size: 0.75rem;
     }
+
 
     /* =========================================================
-       RESPONSIVE
-    ========================================================= */
+       MOBILE
+       ========================================================= */
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
 
-      .header-content {
-        flex-direction: column;
-
-        padding:
-          13px 0;
+      nav {
+        gap: 14px;
       }
 
-      .nav-links {
-        justify-content: center;
-
-        gap:
-          10px 16px;
+      .header-button {
+        display: none;
       }
 
-      .header-content > .cta-button {
-        width: 100%;
-      }
-
-      .two-columns {
+      .hero-grid {
         grid-template-columns: 1fr;
-
-        gap: 35px;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-features {
+      .about-grid {
         grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 600px) {
+
+    @media (max-width: 650px) {
 
       .container {
-        width:
-          calc(100% - 28px);
+        width: min(100% - 28px, 1120px);
       }
 
-      body {
-        background-size:
-          48px 48px,
-          48px 48px,
-          100% 100%,
-          100% 100%;
+      .header-inner {
+        min-height: 68px;
+
+        flex-wrap: wrap;
+
+        padding: 10px 0;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+      }
+
+      nav {
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding-bottom: 4px;
+      }
+
+      nav a {
+        white-space: nowrap;
+
+        font-size: 0.84rem;
       }
 
       .hero {
-        padding:
-          70px 0 60px;
+        padding: 60px 0 65px;
       }
 
       .hero h1 {
-        font-size: 2.25rem;
+        font-size: 2.65rem;
       }
 
       .hero p {
-        font-size: 0.93rem;
+        font-size: 1rem;
       }
 
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons a {
+      .hero-actions .button {
         width: 100%;
 
         text-align: center;
       }
 
       .section {
-        padding:
-          58px 0;
+        padding: 65px 0;
       }
 
-      .section-title {
-        font-size: 1.7rem;
-      }
-
-      .services-grid {
+      .trust-grid {
         grid-template-columns: 1fr;
       }
 
-      .service-card {
-        padding: 22px;
+      .service-card,
+      .hero-card,
+      .about-box {
+        padding: 25px;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
+      .footer-inner {
+        flex-direction: column;
       }
 
-      .nav-links a {
-        font-size: 0.78rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
+      .footer-contact {
+        text-align: left;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
+
+  <!-- ========================================================
+       HEADER
+       ======================================================== -->
 
   <header>
 
-    <div class="container header-content">
+    <div class="container header-inner">
 
-      <a
-        href="/"
-        class="logo"
-        aria-label="Novae Systems - Accueil"
-      >
-
-        <span class="logo-mark">
-          NS
-        </span>
-
-        <span class="logo-name">
-
-          Novae <span>Systems</span>
-
-          <span class="logo-subtitle">
-            Modern IT
-          </span>
-
-        </span>
-
+      <a class="logo" href="/">
+        Novae Systems
       </a>
 
+      <nav aria-label="Navigation principale">
 
-      <nav
-        class="nav-links"
-        aria-label="Navigation principale"
-      >
-
-        <a href="#particuliers">
+        <a href="/particuliers.html">
           Particuliers
         </a>
 
-        <a href="#pros">
-          Pros
+        <a href="/professionnels.html">
+          Professionnels
         </a>
 
-        <a href="#sites">
+        <a href="/sites-web.html">
           Sites web
         </a>
 
-        <a href="#temoignages">
-          Témoignages
+        <a href="/a-propos.html">
+          À propos
         </a>
 
-        <a href="#pourquoi-moi">
-          Pourquoi Novae ?
-        </a>
-
-        <a href="#contact">
+        <a href="/contact.html">
           Contact
         </a>
 
       </nav>
 
-
       <a
+        class="header-button"
         href="tel:+32455109555"
-        class="cta-button"
       >
-        Appeler maintenant
+        Appeler
       </a>
 
     </div>
@@ -1357,153 +878,70 @@
   </header>
 
 
+
   <main>
 
-    <!-- HERO -->
+
+    <!-- ======================================================
+         HERO
+         ====================================================== -->
 
     <section class="hero">
 
-      <div class="container hero-content">
-
-        <div class="hero-label">
-          Support informatique local
-        </div>
-
-        <div class="hero-symbol">
-          ◈
-        </div>
-
-        <h1>
-
-          Assistance informatique &
-          solutions Apple pour
-
-          <span class="highlight">
-            particuliers, indépendants
-            et petites entreprises
-          </span>
-
-        </h1>
-
-        <p>
-
-          Novae Systems vous accompagne avec des
-          solutions informatiques claires, pratiques
-          et adaptées à vos besoins : dépannage,
-          optimisation, Apple, Windows, récupération
-          de données et création de sites web.
-
-        </p>
-
-        <div class="hero-buttons">
-
-          <a
-            href="mailto:novae.systems@icloud.com?subject=Demande%20Novae%20Systems"
-            class="cta-button"
-          >
-            Décrire mon besoin
-          </a>
-
-          <a
-            href="#particuliers"
-            class="secondary-button"
-          >
-            Voir les services
-          </a>
-
-        </div>
-
-
-        <div class="hero-features">
-
-          <div class="hero-feature">
-
-            <div class="hero-feature-icon">
-              ◇
-            </div>
-
-            <strong>
-              Support local
-            </strong>
-
-            <span>
-              Chaumont-Gistoux et Brabant wallon
-            </span>
-
-          </div>
-
-
-          <div class="hero-feature">
-
-            <div class="hero-feature-icon">
-              ⚡
-            </div>
-
-            <strong>
-              Réponse rapide
-            </strong>
-
-            <span>
-              Assistance à distance ou sur place
-            </span>
-
-          </div>
-
-
-          <div class="hero-feature">
-
-            <div class="hero-feature-icon">
-              ⌘
-            </div>
-
-            <strong>
-              Apple & Windows
-            </strong>
-
-            <span>
-              Particuliers, indépendants et TPE
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PRESENTATION -->
-
-    <section class="section">
-
-      <div class="container two-columns">
+      <div class="container hero-grid">
 
         <div>
 
-          <span class="section-label">
-            Novae Systems
+          <span class="eyebrow">
+            Support informatique local
           </span>
 
+          <h1>
+            L'informatique,
+            <br>
+            <span>sans prise de tête.</span>
+          </h1>
+
+          <p>
+            Novae Systems accompagne les particuliers,
+            indépendants et petites entreprises pour leur
+            dépannage informatique, leur environnement Apple
+            & Windows et leurs projets web.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              class="button button-primary"
+              href="/contact.html"
+            >
+              Décrire mon besoin
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="/particuliers.html"
+            >
+              Voir les services
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <aside class="hero-card">
+
+          <small>
+            Un contact informatique clair
+          </small>
+
           <h2>
-            Un contact informatique
-            clair et humain.
+            Une solution adaptée,
+            sans jargon inutile.
           </h2>
 
-          <p>
-            Votre ordinateur est lent, en panne,
-            ou votre réseau vous pose problème ?
-            Vous avez simplement besoin d'aide pour
-            votre environnement informatique ?
-          </p>
-
-          <p>
-            Novae Systems privilégie un diagnostic
-            compréhensible et des solutions adaptées
-            à votre situation.
-          </p>
-
-          <ul class="check-list">
+          <ul>
 
             <li>
               Diagnostic transparent
@@ -1518,32 +956,266 @@
             </li>
 
             <li>
-              Particuliers et professionnels
+              Particuliers, indépendants & TPE
             </li>
 
           </ul>
 
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         SERVICES
+         ====================================================== -->
+
+    <section class="section section-alt">
+
+      <div class="container">
+
+        <div class="section-heading center">
+
+          <h2>
+            Ce que je peux faire pour vous
+          </h2>
+
+          <p>
+            Trois univers, un même objectif :
+            vous permettre d'utiliser votre informatique
+            sereinement.
+          </p>
+
         </div>
 
 
-        <div class="info-box">
+        <div class="service-grid">
 
-          <h3>
-            Besoin d'un avis ?
-          </h3>
+
+          <!-- PARTICULIERS -->
+
+          <article class="service-card">
+
+            <div class="service-number">
+              01 · PARTICULIERS
+            </div>
+
+            <h3>
+              Votre informatique
+            </h3>
+
+            <p>
+              PC ou Mac lent, panne, installation,
+              sauvegarde, récupération de données ou
+              besoin d'aide au quotidien.
+            </p>
+
+            <a
+              class="service-link"
+              href="/particuliers.html"
+            >
+              Découvrir les services →
+            </a>
+
+          </article>
+
+
+
+          <!-- PROFESSIONNELS -->
+
+          <article class="service-card">
+
+            <div class="service-number">
+              02 · PROFESSIONNELS
+            </div>
+
+            <h3>
+              Votre entreprise
+            </h3>
+
+            <p>
+              Support informatique, maintenance et
+              accompagnement pour indépendants,
+              commerces et petites structures.
+            </p>
+
+            <a
+              class="service-link"
+              href="/professionnels.html"
+            >
+              Découvrir les solutions →
+            </a>
+
+          </article>
+
+
+
+          <!-- WEB -->
+
+          <article class="service-card">
+
+            <div class="service-number">
+              03 · WEB
+            </div>
+
+            <h3>
+              Votre présence en ligne
+            </h3>
+
+            <p>
+              Création de sites web modernes,
+              clairs et adaptés aux besoins des
+              indépendants et petites entreprises.
+            </p>
+
+            <a
+              class="service-link"
+              href="/sites-web.html"
+            >
+              Découvrir les offres web →
+            </a>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         POINTS FORTS
+         ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="trust-grid">
+
+
+          <div class="trust-item">
+
+            <strong>
+              Local
+            </strong>
+
+            <span>
+              Basé à Chaumont-Gistoux,
+              actif dans le Brabant wallon.
+            </span>
+
+          </div>
+
+
+          <div class="trust-item">
+
+            <strong>
+              Transparent
+            </strong>
+
+            <span>
+              Diagnostic et explications
+              avant intervention.
+            </span>
+
+          </div>
+
+
+          <div class="trust-item">
+
+            <strong>
+              Humain
+            </strong>
+
+            <span>
+              Un interlocuteur unique,
+              de la demande à la résolution.
+            </span>
+
+          </div>
+
+
+          <div class="trust-item">
+
+            <strong>
+              Polyvalent
+            </strong>
+
+            <span>
+              Apple, Windows, informatique
+              et création web.
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         À PROPOS
+         ====================================================== -->
+
+    <section class="section section-alt">
+
+      <div class="container about-grid">
+
+
+        <div class="about-box">
+
+          <div class="quote">
+            « L'objectif n'est pas de
+            compliquer l'informatique.
+            C'est de la rendre plus simple. »
+          </div>
+
+          <div class="location">
+            Novae Systems · Chaumont-Gistoux
+          </div>
+
+        </div>
+
+
+        <div class="about-copy">
+
+          <div class="section-heading">
+
+            <h2>
+              Un service local et accessible
+            </h2>
+
+          </div>
 
           <p>
-            Vous n'êtes pas certain du service dont
-            vous avez besoin ? Décrivez simplement
-            votre problème et nous déterminerons
-            ensemble la meilleure solution.
+            Je privilégie une approche simple :
+            comprendre votre problème, vous expliquer
+            les possibilités et vous proposer une
+            solution adaptée à votre situation.
+          </p>
+
+          <p>
+            Pas besoin de connaître le vocabulaire
+            informatique. Vous m'expliquez ce qui ne va
+            pas, et nous voyons ensemble comment le résoudre.
           </p>
 
           <a
-            href="tel:+32455109555"
-            class="cta-button"
+            class="button button-primary"
+            href="/a-propos.html"
           >
-            +32 455 10 95 55
+            En savoir plus
           </a>
 
         </div>
@@ -1553,749 +1225,51 @@
     </section>
 
 
-    <!-- PARTICULIERS -->
 
-    <section
-      id="particuliers"
-      class="section section-alt"
-    >
+    <!-- ======================================================
+         TÉMOIGNAGES
+         ====================================================== -->
+
+    <section class="section">
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading center">
 
-          <span class="section-label">
-            Particuliers
-          </span>
-
-          <h2 class="section-title">
-            Votre informatique,
-            sans prise de tête.
-          </h2>
-
-          <p class="section-subtitle">
-            Des prestations simples et transparentes
-            pour retrouver un ordinateur fiable
-            et performant.
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-          <!-- PACK PC / MAC -->
-
-          <article class="service-card">
-
-            <span class="price-badge">
-              Populaire
-            </span>
-
-            <div class="service-icon">
-              ⚡
-            </div>
-
-            <h3>
-              Pack « PC/Mac lent »
-            </h3>
-
-            <p>
-              Votre ordinateur rame, met 10 minutes
-              à démarrer ou plante souvent ? Je nettoie,
-              optimise et sécurise votre appareil.
-            </p>
-
-            <ul>
-
-              <li>
-                Diagnostic complet
-              </li>
-
-              <li>
-                Nettoyage système
-              </li>
-
-              <li>
-                Optimisation des performances
-              </li>
-
-              <li>
-                Vérification malware / virus
-              </li>
-
-              <li>
-                Sauvegarde si nécessaire
-              </li>
-
-              <li>
-                Conseils personnalisés
-              </li>
-
-            </ul>
-
-            <span class="price">
-              Forfait : 89 EUR
-            </span>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Pack%20PC%20lent"
-              class="cta-button"
-              style="width:100%;"
-            >
-              Réserver ce pack
-            </a>
-
-          </article>
-
-
-          <!-- DEPANNAGE -->
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              🔧
-            </div>
-
-            <h3>
-              Dépannage urgent
-            </h3>
-
-            <p>
-              Écran bleu, ordinateur qui ne démarre
-              plus, perte de données ou problème
-              urgent ?
-            </p>
-
-            <ul>
-
-              <li>
-                Diagnostic rapide
-              </li>
-
-              <li>
-                À distance ou sur place
-              </li>
-
-              <li>
-                Devis avant intervention
-              </li>
-
-              <li>
-                Réparation ou solution de contournement
-              </li>
-
-              <li>
-                Récupération de données si possible
-              </li>
-
-            </ul>
-
-            <span class="price">
-
-              Diagnostic : gratuit si réparation
-
-              <span class="price-note">
-                Taux horaire : 70 EUR / h · minimum 1 h
-              </span>
-
-            </span>
-
-            <a
-              href="tel:+32455109555"
-              class="cta-button"
-              style="width:100%;"
-            >
-              Appeler pour un dépannage
-            </a>
-
-          </article>
-
-
-          <!-- RECUPERATION -->
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              💾
-            </div>
-
-            <h3>
-              Récupération de données
-            </h3>
-
-            <p>
-              Disque dur endommagé, fichiers supprimés
-              ou panne de stockage ? Je tente de récupérer
-              vos données importantes.
-            </p>
-
-            <ul>
-
-              <li>
-                Diagnostic du support
-              </li>
-
-              <li>
-                Tentative de récupération
-              </li>
-
-              <li>
-                Devis avant intervention
-              </li>
-
-              <li>
-                Photos, documents et fichiers
-              </li>
-
-            </ul>
-
-            <span class="price">
-
-              Diagnostic : 40 EUR
-
-              <span class="price-note">
-                Récupération : 80–200 EUR+
-                selon complexité
-              </span>
-
-            </span>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Recuperation%20donnees"
-              class="secondary-button"
-              style="width:100%;"
-            >
-              Demander un devis
-            </a>
-
-          </article>
-
-
-          <!-- NOUVEAU PC / MAC -->
-
-          <article class="service-card apple">
-
-            <div class="service-icon">
-              
-            </div>
-
-            <h3>
-              Installation nouveau PC / Mac
-            </h3>
-
-            <p>
-              Vous venez d'acheter un nouvel ordinateur ?
-              Je m'occupe de la configuration et du
-              transfert de vos données.
-            </p>
-
-            <ul>
-
-              <li>
-                Transfert de fichiers
-              </li>
-
-              <li>
-                Installation des logiciels
-              </li>
-
-              <li>
-                Configuration email
-              </li>
-
-              <li>
-                Imprimante et périphériques
-              </li>
-
-              <li>
-                Conseils et prise en main
-              </li>
-
-            </ul>
-
-            <span class="price">
-              Forfait : 79 EUR
-            </span>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Installation%20nouveau%20PC"
-              class="secondary-button"
-              style="width:100%;"
-            >
-              Demander un devis
-            </a>
-
-          </article>
-
-        </div>
-
-
-        <div class="pricing-note">
-
-          <strong>
-            Tarification transparente.
-          </strong>
-
-          Les prestations nécessitant du matériel
-          ou une intervention spécifique font l'objet
-          d'une estimation préalable.
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PROS -->
-
-    <section
-      id="pros"
-      class="section"
-    >
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <span class="section-label">
-            Professionnels & TPE
-          </span>
-
-          <h2 class="section-title">
-            Votre informatique doit
-            travailler pour vous.
-          </h2>
-
-          <p class="section-subtitle">
-            Support et accompagnement pour indépendants,
-            commerces, restaurants, bureaux et petites
-            structures.
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              ◇
-            </div>
-
-            <h3>
-              Contrat « Base »
-            </h3>
-
-            <span class="price">
-              49–79 EUR / mois
-            </span>
-
-            <p>
-              Idéal pour indépendants et très petites
-              structures.
-            </p>
-
-            <ul>
-
-              <li>
-                Support à distance
-              </li>
-
-              <li>
-                Téléphone et email
-              </li>
-
-              <li>
-                Prise en main à distance
-              </li>
-
-              <li>
-                Jusqu'à 2–3 interventions à distance
-              </li>
-
-              <li>
-                1–3 appareils
-              </li>
-
-            </ul>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Contrat%20Base%20Pro"
-              class="cta-button"
-              style="width:100%;"
-            >
-              Demander un devis
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <span class="price-badge">
-              Recommandé
-            </span>
-
-            <div class="service-icon">
-              🛡️
-            </div>
-
-            <h3>
-              Contrat « Standard »
-            </h3>
-
-            <span class="price">
-              99–129 EUR / mois
-            </span>
-
-            <p>
-              Pour petits commerces, bureaux,
-              restaurants et écoles.
-            </p>
-
-            <ul>
-
-              <li>
-                Tout ce qui est inclus dans Base
-              </li>
-
-              <li>
-                1 intervention sur site / mois
-              </li>
-
-              <li>
-                Jusqu'à 5–8 appareils
-              </li>
-
-              <li>
-                Sauvegarde configurée et vérifiée
-              </li>
-
-              <li>
-                Priorité d'intervention
-              </li>
-
-            </ul>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Contrat%20Standard%20Pro"
-              class="cta-button"
-              style="width:100%;"
-            >
-              Demander un audit gratuit
-            </a>
-
-          </article>
-
-
-          <article class="service-card apple">
-
-            <div class="service-icon">
-              ◉
-            </div>
-
-            <h3>
-              Contrat « Premium »
-            </h3>
-
-            <span class="price">
-              199–299 EUR / mois
-            </span>
-
-            <p>
-              Pour les structures avec un parc
-              informatique plus important.
-            </p>
-
-            <ul>
-
-              <li>
-                Tout ce qui est inclus dans Standard
-              </li>
-
-              <li>
-                Interventions sur site plus fréquentes
-              </li>
-
-              <li>
-                Jusqu'à 10–15 appareils
-              </li>
-
-              <li>
-                Audit trimestriel
-              </li>
-
-              <li>
-                Conseils sécurité
-              </li>
-
-              <li>
-                Formation basique des utilisateurs
-              </li>
-
-            </ul>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Contrat%20Premium%20Pro"
-              class="secondary-button"
-              style="width:100%;"
-            >
-              Demander un devis
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SITES WEB -->
-
-    <section
-      id="sites"
-      class="section section-alt"
-    >
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <span class="section-label">
-            Web & Digital
-          </span>
-
-          <h2 class="section-title">
-            Une présence digitale
-            qui vous ressemble.
-          </h2>
-
-          <p class="section-subtitle">
-            Des sites modernes et performants
-            pour indépendants et petites entreprises.
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              ◇
-            </div>
-
-            <h3>
-              Site one-page
-            </h3>
-
-            <p>
-              Une page unique, claire et efficace
-              pour présenter votre activité.
-            </p>
-
-            <ul>
-
-              <li>
-                Design moderne et responsive
-              </li>
-
-              <li>
-                Présentation des services
-              </li>
-
-              <li>
-                Formulaire de contact
-              </li>
-
-              <li>
-                Performances et sécurité
-              </li>
-
-              <li>
-                Hébergement et domaine en option
-              </li>
-
-            </ul>
-
-            <span class="price">
-              490–890 EUR
-            </span>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Site%20one-page"
-              class="cta-button"
-              style="width:100%;"
-            >
-              Demander un devis
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <span class="price-badge">
-              Populaire
-            </span>
-
-            <div class="service-icon">
-              ✦
-            </div>
-
-            <h3>
-              Site complet (5–8 pages)
-            </h3>
-
-            <p>
-              Un site plus développé pour présenter
-              votre entreprise et votre activité.
-            </p>
-
-            <ul>
-
-              <li>
-                Architecture et navigation
-              </li>
-
-              <li>
-                Design personnalisé
-              </li>
-
-              <li>
-                Optimisation SEO de base
-              </li>
-
-              <li>
-                Formation à la gestion du contenu
-              </li>
-
-            </ul>
-
-            <span class="price">
-              990–1 900 EUR
-            </span>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Site%20complet"
-              class="cta-button"
-              style="width:100%;"
-            >
-              Demander un devis
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              ↻
-            </div>
-
-            <h3>
-              Maintenance mensuelle
-            </h3>
-
-            <p>
-              Je m'occupe de votre site après
-              sa mise en ligne.
-            </p>
-
-            <ul>
-
-              <li>
-                Mises à jour régulières
-              </li>
-
-              <li>
-                Vérification de sécurité
-              </li>
-
-              <li>
-                Sauvegardes automatiques
-              </li>
-
-              <li>
-                Petites modifications incluses
-              </li>
-
-            </ul>
-
-            <span class="price">
-              39–79 EUR / mois
-            </span>
-
-            <a
-              href="mailto:novae.systems@icloud.com?subject=Devis%20Maintenance%20site"
-              class="secondary-button"
-              style="width:100%;"
-            >
-              Demander un devis
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- TEMOIGNAGES -->
-
-    <section
-      id="temoignages"
-      class="section"
-    >
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <span class="section-label">
-            Témoignages
-          </span>
-
-          <h2 class="section-title">
+          <h2>
             Des clients qui savent où appeler.
           </h2>
 
+          <p>
+            Quelques retours après leur intervention.
+          </p>
+
         </div>
 
 
-        <div class="testimonials-grid">
+        <div class="testimonial-grid">
 
-          <article class="testimonial-card">
+
+          <article class="testimonial">
 
             <div class="stars">
               ★★★★★
             </div>
 
             <p>
-              « Mon MacBook était très lent, maintenant
-              il redémarre en quelques secondes.
-              Service rapide et clair. »
+              « Mon MacBook était très lent,
+              maintenant il redémarre en quelques
+              secondes. Service rapide et clair. »
             </p>
 
-            <div class="testimonial-author">
+            <strong>
               Jean · Wavre
-            </div>
+            </strong>
 
           </article>
 
 
-          <article class="testimonial-card">
+          <article class="testimonial">
 
             <div class="stars">
               ★★★★★
@@ -2307,29 +1281,30 @@
               l'ordre en une journée. »
             </p>
 
-            <div class="testimonial-author">
+            <strong>
               Sophie · Chaumont-Gistoux
-            </div>
+            </strong>
 
           </article>
 
 
-          <article class="testimonial-card">
+          <article class="testimonial">
 
             <div class="stars">
               ★★★★★
             </div>
 
             <p>
-              « Je recommande pour le sérieux et les
-              explications claires. »
+              « Je recommande pour le sérieux
+              et les explications claires. »
             </p>
 
-            <div class="testimonial-author">
+            <strong>
               Marc · Ottignies
-            </div>
+            </strong>
 
           </article>
+
 
         </div>
 
@@ -2338,122 +1313,12 @@
     </section>
 
 
-    <!-- POURQUOI NOVAE -->
 
-    <section
-      id="pourquoi-moi"
-      class="section section-alt"
-    >
+    <!-- ======================================================
+         CTA
+         ====================================================== -->
 
-      <div class="container">
-
-        <div class="section-header">
-
-          <span class="section-label">
-            Pourquoi Novae Systems ?
-          </span>
-
-          <h2 class="section-title">
-            Une technologie plus simple.
-          </h2>
-
-        </div>
-
-
-        <div class="why-grid">
-
-          <article class="why-card">
-
-            <strong>
-              ✓ Diagnostic transparent
-            </strong>
-
-            <p>
-              Devis et explications avant intervention.
-            </p>
-
-          </article>
-
-
-          <article class="why-card">
-
-            <strong>
-              ⚡ Intervention rapide
-            </strong>
-
-            <p>
-              À distance ou directement sur place.
-            </p>
-
-          </article>
-
-
-          <article class="why-card">
-
-            <strong>
-               Apple & Mac
-            </strong>
-
-            <p>
-              Assistance spécialisée dans votre
-              environnement Apple.
-            </p>
-
-          </article>
-
-
-          <article class="why-card">
-
-            <strong>
-              💻 Windows
-            </strong>
-
-            <p>
-              Support PC et environnement Windows.
-            </p>
-
-          </article>
-
-
-          <article class="why-card">
-
-            <strong>
-              📍 Proximité
-            </strong>
-
-            <p>
-              Basé à Chaumont-Gistoux, actif dans
-              le Brabant wallon.
-            </p>
-
-          </article>
-
-
-          <article class="why-card">
-
-            <strong>
-              ◈ Double compétence
-            </strong>
-
-            <p>
-              Informatique, web et solutions digitales.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CTA FINAL -->
-
-    <section
-      id="contact"
-      class="cta-final"
-    >
+    <section class="section final-cta">
 
       <div class="container">
 
@@ -2468,18 +1333,22 @@
           la plus adaptée.
         </p>
 
-        <div class="hero-buttons">
+
+        <div
+          class="hero-actions"
+          style="justify-content:center;"
+        >
 
           <a
+            class="button button-primary"
             href="tel:+32455109555"
-            class="cta-button"
           >
             Appeler le +32 455 10 95 55
           </a>
 
           <a
+            class="button button-secondary"
             href="mailto:novae.systems@icloud.com"
-            class="secondary-button"
           >
             Envoyer un email
           </a>
@@ -2490,66 +1359,37 @@
 
     </section>
 
+
   </main>
 
 
-  <!-- FOOTER -->
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
 
   <footer>
 
     <div class="container">
 
-      <div class="footer-grid">
+      <div class="footer-inner">
 
-        <div class="footer-col">
 
-          <h4>
+        <div class="footer-brand">
+
+          <strong>
             Novae Systems
-          </h4>
+          </strong>
 
-          <p>
-            Support informatique, Apple et solutions
-            digitales pour particuliers et petites
-            entreprises.
-          </p>
-
-          <p>
-            Chaumont-Gistoux · Brabant wallon · Belgique
-          </p>
+          <span>
+            Support informatique,
+            Apple & solutions digitales
+          </span>
 
         </div>
 
 
-        <div class="footer-col">
-
-          <h4>
-            Services
-          </h4>
-
-          <a href="#particuliers">
-            Particuliers
-          </a>
-
-          <a href="#pros">
-            Pros & TPE
-          </a>
-
-          <a href="#sites">
-            Sites web
-          </a>
-
-          <a href="#pourquoi-moi">
-            Pourquoi Novae ?
-          </a>
-
-        </div>
-
-
-        <div class="footer-col">
-
-          <h4>
-            Contact
-          </h4>
+        <div class="footer-contact">
 
           <a href="tel:+32455109555">
             +32 455 10 95 55
@@ -2559,11 +1399,12 @@
             novae.systems@icloud.com
           </a>
 
-          <p>
-            Chaumont-Gistoux
-          </p>
+          <span>
+            Chaumont-Gistoux · Brabant wallon · Belgique
+          </span>
 
         </div>
+
 
       </div>
 
@@ -2571,9 +1412,7 @@
       <div class="copyright">
 
         © 2026 Novae Systems — Tous droits réservés.
-
         <br>
-
         Régime de franchise de taxe — TVA non applicable.
 
       </div>
@@ -2581,6 +1420,7 @@
     </div>
 
   </footer>
+
 
 </body>
 </html>
