@@ -1,0 +1,64 @@
+/* =========================================================
+   NOVAE SYSTEMS — THEME FIX
+   Ce fichier reste volontairement léger.
+   Il évite les anciens overrides contradictoires.
+   ========================================================= */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="light"] .logo-mark {
+  background: rgba(78,123,103,.08);
+  border-color: rgba(78,123,103,.28);
+  box-shadow: none;
+}
+
+html[data-theme="light"] .logo-name span,
+html[data-theme="light"] .logo-subtitle {
+  color: var(--green);
+}
+
+html[data-theme="light"] .home-card-link,
+html[data-theme="light"] .hero-label,
+html[data-theme="light"] .section-label,
+html[data-theme="light"] .highlight {
+  color: var(--green);
+}
+
+html[data-theme="light"] .cta-button {
+  color: #fffdf9;
+  background: linear-gradient(135deg, #5d8b75, #4e7b67);
+  box-shadow: 0 8px 22px rgba(78,123,103,.16);
+}
+
+html[data-theme="light"] .cta-button:hover {
+  background: linear-gradient(135deg, #67967e, #537f6b);
+}
+
+html[data-theme="light"] .theme-toggle,
+html[data-theme="light"] .secondary-button {
+  color: var(--text);
+  border-color: rgba(55,64,58,.14);
+}
+
+html[data-theme="light"] footer {
+  color: #eef3ef;
+}
+
+html[data-theme="light"] footer .footer-col h4 {
+  color: #f2f5f2;
+}
+
+html[data-theme="light"] footer .footer-col p,
+html[data-theme="light"] footer .footer-col a {
+  color: #b8c1bb;
+}
+
+html[data-theme="light"] .copyright {
+  color: #8e9a93;
+}
