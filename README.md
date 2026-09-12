@@ -1,12 +1,12 @@
-# Novae Systems — version production
+# Novae Systems — version multi-pages
 
-Cette version est prête à être copiée directement à la racine du dépôt GitHub Pages.
+Fichiers à mettre directement à la racine du dépôt GitHub Pages.
 
-Fichiers à placer à la racine :
-- index.html
-- style.css
-- script.js
-- mobile-fix.css
-- assets/
+Pages :
+- index.html — Accueil
+- services.html — Services
+- entreprises.html — Entreprises
+- a-propos.html — À propos
+- contact.html — Contact
 
-Dans GitHub Pages : Settings → Pages → Deploy from a branch → main → /(root).
+Ne pas placer ces fichiers dans un sous-dossier. Le dossier `assets` doit rester à la racine.
