@@ -21,3 +21,8 @@ html[data-theme=dark]{--bg:#111312;--surface:rgba(255,255,255,.07);--text:#f3f1e
 /* Multi-page additions */
 .page-hero{padding-top:120px;padding-bottom:72px;min-height:360px;display:flex;align-items:center}.page-hero h1{max-width:820px}.page-hero .hero-lead{max-width:680px}
 @media(max-width:700px){.page-hero{padding-top:92px;padding-bottom:48px;min-height:300px}}
+
+
+/* ===== Pages légales ===== */
+.legal-wrap{width:min(900px,calc(100% - 40px));margin:auto;padding:95px 0 110px}.legal-wrap .eyebrow{margin-bottom:18px}.legal-wrap h1{font:400 clamp(42px,5vw,68px)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-1.5px;margin:0 0 22px}.legal-wrap .legal-intro{color:var(--muted);font-size:17px;line-height:1.7;max-width:760px;margin-bottom:48px}.legal-wrap h2{font:400 30px/1.15 Georgia,"Times New Roman",serif;margin:45px 0 15px}.legal-wrap h3{font-size:18px;margin:30px 0 10px}.legal-wrap p,.legal-wrap li{color:var(--muted);font-size:15px;line-height:1.75}.legal-wrap ul{padding-left:22px}.legal-meta{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:22px 24px;margin:30px 0 45px}.legal-meta p{margin:5px 0}.legal-note{font-size:13px!important}.legal-back{margin-top:50px}
+@media(max-width:700px){.legal-wrap{padding:65px 0 80px}.legal-wrap h2{font-size:26px}.legal-wrap p,.legal-wrap li{font-size:14px}}
